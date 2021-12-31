@@ -1,9 +1,9 @@
 <?php 
 
-class Admin_controller extends CI_Controller
+Class Admin_controller extends CI_Controller
 {
     public function index()
     {
-       echo "This is admin page";
+       $this->load->view('Admin/Login_view');
     }
 }
