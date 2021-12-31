@@ -53,6 +53,7 @@
   </div>
   <!-- container-scroller -->
   <!-- plugins:js -->
+  <script src="<?php echo base_url() ?>js/const.js"></script>
   <script src="<?php echo base_url(); ?>assets/vendors/base/vendor.bundle.base.js"></script>
   <!-- endinject -->
   <!-- inject:js -->
