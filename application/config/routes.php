@@ -54,5 +54,7 @@ $route['admin'] = 'Admin/Admin_controller';
 $route['auth'] = 'Admin/Admin_controller/auth';
 $route['home'] = 'Admin/Admin_controller/home';
 $route['logout'] = 'Admin/Admin_controller/logout';
+$route['categories'] = 'Admin/Admin_controller/categories';
+$route['products'] = 'Admin/Admin_controller/products';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

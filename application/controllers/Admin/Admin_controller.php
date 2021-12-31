@@ -41,4 +41,26 @@ Class Admin_controller extends CI_Controller
         session_destroy();
         redirect(base_url().'admin');
     }
+    public function categories()
+    {
+        if(isset($_SESSION['firstname']))
+        {
+            $this->load->view('Admin/Categories_view');
+        }
+        else
+        {
+            redirect(base_url().'admin');
+        }
+    }
+    public function products()
+    {
+        if(isset($_SESSION['firstname']))
+        {
+            $this->load->view('Admin/Product_view');
+        }
+        else
+        {
+            redirect(base_url().'admin');
+        }
+    }
 }

@@ -168,33 +168,13 @@
       <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <ul class="nav">
           <li class="nav-item">
-            <a class="nav-link" href="<?php echo base_url(); ?>Hero">
-              <i class="mdi mdi-home menu-icon"></i>
-              <span class="menu-title">Hero Section</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="<?php echo base_url(); ?>aboutus">
-              <i class="mdi mdi-home menu-icon"></i>
-              <span class="menu-title">About Us Section</span>
+            <a class="nav-link" href="<?php echo base_url(); ?>categories">
+              <span class="menu-title">Categories</span>
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="<?php echo base_url(); ?>products">
-              <i class="mdi mdi-home menu-icon"></i>
               <span class="menu-title">Products</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="<?php echo base_url(); ?>contactus">
-              <i class="mdi mdi-home menu-icon"></i>
-              <span class="menu-title">Contact Us</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="index.html">
-              <i class="mdi mdi-home menu-icon"></i>
-              <span class="menu-title"></span>
             </a>
           </li>
         </ul>
