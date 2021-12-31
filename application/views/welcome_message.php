@@ -23,6 +23,7 @@
 
     <link rel="stylesheet" href="<?php echo base_url(); ?>css/furniture.css" type="text/css" />
     <link rel="stylesheet" href="<?php echo base_url(); ?>css/fonts.css" type="text/css" />
+    <link rel="shortcut icon" href="<?php echo base_url(); ?>images/icon.png" />
 
 
     <title>Neptune Lights</title>
