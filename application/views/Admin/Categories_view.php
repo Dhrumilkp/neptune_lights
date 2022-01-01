@@ -47,21 +47,25 @@
                       <thead>
                         <tr>
                           <th>Name</th>
-                          <th>Created On</th>
                           <th>Action</th>
                         </tr>
                       </thead>
-                      <tbody>
-                        <tr>
-                          <td>Jacob</td>
-                          <td>53275531</td>
-                          <td>
-                            <div class="wrapper_action" style="display:flex;width:20%;justify-content:space-between;">
-                              <a href="javascript:void;"><i class="lni lni-pencil-alt" style="font-size: x-large;"></i></a>
-                              <a href="javascript:void;"><i class="lni lni-cross-circle" style="font-size: x-large;"></i></a>
-                            </div>
-                          </td>
-                        </tr>
+                      <tbody id="load_cat_here">
+                        <?php 
+                          foreach($categories as $row)
+                          {
+                            ?>
+                              <tr>
+                                <td><?php echo $row['name']; ?></td>
+                                <td>
+                                  <div class="wrapper_action" style="display:flex;width:20%;justify-content:space-between;">
+                                    <a href="javascript:void;" data-id="<?php echo $row['id']; ?>"><i class="lni lni-cross-circle" style="font-size: x-large;"></i></a>
+                                  </div>
+                                </td>
+                              </tr>                              
+                            <?
+                          }
+                        ?>
                       </tbody>
                     </table>
                   </div>

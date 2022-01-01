@@ -46,7 +46,8 @@ Class Admin_controller extends CI_Controller
     {
         if(isset($_SESSION['firstname']))
         {
-            $this->load->view('Admin/Categories_view');
+            $data['categories'] = $this->Admin_model->get_all_cat();
+            $this->load->view('Admin/Categories_view',$data);
         }
         else
         {
