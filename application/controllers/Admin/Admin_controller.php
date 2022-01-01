@@ -6,6 +6,7 @@ Class Admin_controller extends CI_Controller
     {
         parent::__construct();
         $this->load->model('Auth/Auth_model');
+        $this->load->model('Admin/Admin_model');
     }
     public function index()
     {
@@ -61,6 +62,21 @@ Class Admin_controller extends CI_Controller
         else
         {
             redirect(base_url().'admin');
+        }
+    }
+    public function createnewmaincat()
+    {
+        if(isset($_SESSION['firstname']))
+        {
+            $this->Admin_model->create_new_main_cat($_POST['cat_name']);
+        }
+        else
+        {
+            $response = array(
+                'status' => 'err',
+                'message' => 'Not authorized'
+            );
+            echo json_encode($response);
         }
     }
 }

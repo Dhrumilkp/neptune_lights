@@ -30,7 +30,7 @@
                       <label for="exampleInputName1">Name</label>
                       <input type="text" class="form-control" id="cat_name" placeholder="Name">
                     </div>
-                    <button type="submit" class="btn btn-primary me-2" style="color:white;">Submit</button>
+                    <button type="submit" class="btn btn-primary me-2" style="color:white;" id="submit_button_new_cat">Submit</button>
                   </form>
                 </div>
               </div>
@@ -76,6 +76,7 @@
     </div>
     <!-- page-body-wrapper ends -->
   </div>
+  <script src="<?php echo base_url(); ?>js/const.js"></script>
   <?php 
     $this->load->view('Admin/Footer');
   ?>
