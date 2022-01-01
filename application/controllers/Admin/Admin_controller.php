@@ -80,4 +80,19 @@ Class Admin_controller extends CI_Controller
             echo json_encode($response);
         }
     }
+    public function delete_cat()
+    {
+        if(isset($_SESSION['firstname']))
+        {
+            $this->Admin_model->delete_cat_id($_POST['cat_id']);
+        }
+        else
+        {
+            $response = array(
+                'status' => 'err',
+                'message' => 'Not authorized'
+            );
+            echo json_encode($response);
+        }
+    }
 }

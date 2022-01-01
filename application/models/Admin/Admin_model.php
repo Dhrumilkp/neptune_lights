@@ -67,4 +67,23 @@ class Admin_model extends CI_Model
             return false;
         }
     }  
+    public function delete_cat_id($id)
+    {
+        $this->db->where('id',$id);
+        if($this->db->delete('nep_main_categories'))
+        {
+            $response = array(
+                'status' => 'success'
+            );
+            echo json_encode($response);
+        }
+        else
+        {
+            $response = array(
+                'status' => 'err',
+                'message' => 'Cannot delete this cat'
+            );
+            echo json_encode($response);
+        }
+    }
 }

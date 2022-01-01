@@ -19,16 +19,7 @@ $('#create_new_cat_form').submit(function(e){
             {
                 if(response.status == "success")
                 {
-                    $("#load_cat_here").prepend(
-                        '<tr>'+
-                        '<td>'+response.cat_name+'</td>'+
-                        '<td>'+
-                          '<div class="wrapper_action" style="display:flex;width:20%;justify-content:space-between;">'+
-                            '<a href="javascript:void;" data-id='+response.id+'><i class="lni lni-cross-circle" style="font-size: x-large;"></i></a>'+
-                          '</div>'+
-                        '</td>'+
-                        '<tr>');
-                        $('#submit_button_new_cat').prop('disabled',false);
+                    location.reload();
                 }
                 else
                 {
@@ -39,3 +30,28 @@ $('#create_new_cat_form').submit(function(e){
         });
     }
 });
+
+function delete_cat(caller)
+{
+    var cat_id = $(caller).attr('data-id');
+    console.log(cat_id);
+    $.ajax({
+        url : ''+url+'delete_cat',
+        method : "post",
+        data : {
+            cat_id : cat_id
+        },
+        dataType : "json",
+        success:function(response)
+        {
+            if(response.status == 'success')
+            {
+                location.reload();
+            }
+            else
+            {
+                alert(response.message)
+            }
+        }
+    })
+}
