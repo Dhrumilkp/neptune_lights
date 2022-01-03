@@ -61,6 +61,7 @@ Class Admin_controller extends CI_Controller
         {
             $data['categories'] = $this->Admin_model->get_all_cat();
             $data['subcategories'] = $this->Admin_model->get_all_subcat();
+            $data['product_data'] = $this->Admin_model->get_all_product();
             $this->load->view('Admin/Product_view',$data);
         }
         else

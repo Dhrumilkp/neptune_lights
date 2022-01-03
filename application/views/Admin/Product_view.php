@@ -67,6 +67,65 @@
             </div>
           </div>
           <hr>
+          <div class="row">
+            <div class="container">
+              <div class="row">
+                <?php 
+                  if(!empty($product_data))
+                  {
+                    foreach($product_data as $row)
+                    {
+                      ?>
+                        <div class="col">
+                          <div class="card">
+                            <div class="card-header" style="padding:0px;">
+                              <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                                <div class="carousel-inner">
+                                  <?php 
+                                    $array = unserialize($row['img_paths']);
+                                    foreach($array as $key => $value)
+                                    {
+                                      if ($key === array_key_first($array)) {
+                                        ?>
+                                          <div class="carousel-item active">
+                                            <img src="<?php echo $value; ?>" class="d-block w-100" alt="...">
+                                          </div>
+                                        <?
+                                      }
+                                      else
+                                      {
+                                        ?>
+                                          <div class="carousel-item">
+                                            <img src="<?php echo $value; ?>" class="d-block w-100" alt="...">
+                                          </div>
+                                        <?
+                                      }
+                                    }
+                                  ?>
+                                </div>
+                                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                  <span class="visually-hidden">Previous</span>
+                                </button>
+                                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                  <span class="visually-hidden">Next</span>
+                                </button>
+                              </div>
+                            </div>
+                            <div class="card-body">
+                              <h4 class="card-title"><?php echo $row['title']; ?></h4>
+                              <p><?php echo $row['description']; ?></p>
+                            </div>
+                          </div>
+                        </div>
+                      <?
+                    }
+                  }
+                ?>
+              </div>
+            </div>
+          </div>
         </div>
         <!-- content-wrapper ends -->
       </div>

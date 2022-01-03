@@ -183,7 +183,6 @@ class Admin_model extends CI_Model
     }
     public function get_all_subcat()
     {
-        $this->db->limit(5);
         $query = $this->db->get('nep_sub_categories');
         if($query -> num_rows() > 0){
             $result = $query->result_array();
@@ -227,7 +226,7 @@ class Admin_model extends CI_Model
             // Upload product to folder
             if( $_FILES['product_img']['name'] != "" ) {
                 // Counting the number of files
-                $total = count($_FILES);
+                $total = count($_FILES['product_img']);
                 // Checking the path
                 $create_path = "uploads/products/";
                 if (!file_exists($create_path)) {
@@ -270,6 +269,18 @@ class Admin_model extends CI_Model
                 'message' => 'please add photo to the product'
             );
             echo json_encode($response);
+        }
+    }
+    public function get_all_product()
+    {
+        $query = $this->db->get('nep_products');
+        if($query -> num_rows() > 0){
+            $result = $query->result_array();
+            return $result;
+        }
+        else
+        {
+            return false;
         }
     }
 }
