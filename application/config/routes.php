@@ -60,5 +60,6 @@ $route['createnewmaincat'] = 'Admin/Admin_controller/createnewmaincat';
 $route['delete_cat'] = 'Admin/Admin_controller/delete_cat';
 $route['add_new_sub_cat'] = 'Admin/Admin_controller/add_new_sub_cat';
 $route['delete_sub_cat'] = 'Admin/Admin_controller/delete_sub_cat';
+$route['upload_new_product'] = 'Admin/Admin_controller/upload_new_product';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

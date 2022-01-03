@@ -59,7 +59,9 @@ Class Admin_controller extends CI_Controller
     {
         if(isset($_SESSION['firstname']))
         {
-            $this->load->view('Admin/Product_view');
+            $data['categories'] = $this->Admin_model->get_all_cat();
+            $data['subcategories'] = $this->Admin_model->get_all_subcat();
+            $this->load->view('Admin/Product_view',$data);
         }
         else
         {
@@ -116,6 +118,21 @@ Class Admin_controller extends CI_Controller
         if(isset($_SESSION['firstname']))
         {
             $this->Admin_model->delete_sub_cata($_POST['sub_cat_id']);
+        }
+        else
+        {
+            $response = array(
+                'status' => 'err',
+                'message' => 'Not authorized'
+            );
+            echo json_encode($response);
+        }
+    }
+    public function upload_new_product()
+    {
+        if(isset($_SESSION['firstname']))
+        {
+            $this->Admin_model->add_new_product_data();
         }
         else
         {
