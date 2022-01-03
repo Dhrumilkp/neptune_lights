@@ -95,4 +95,19 @@ Class Admin_controller extends CI_Controller
             echo json_encode($response);
         }
     }
+    public function add_new_sub_cat()
+    {
+        if(isset($_SESSION['firstname']))
+        {
+            $this->Admin_model->add_new_sub_cat_model();
+        }
+        else
+        {
+            $response = array(
+                'status' => 'err',
+                'message' => 'Not authorized'
+            );
+            echo json_encode($response);
+        }
+    }
 }

@@ -61,6 +61,33 @@ function add_sub_cat(caller)
 {
     var cat_id = $(caller).attr('data-id');
     $('.add_sub_cat_wrapper_'+cat_id+'').show();
+    $(document).on('submit','#create_new_sub_cat_'+cat_id+'',function(e){
+        e.preventDefault();
+        $('#submit_sub_cat_btn_'+cat_id+'').prop('disabled',true);
+        var data = new FormData(this);
+        $.ajax({
+            url : ""+url+"add_new_sub_cat",
+            method : "post",
+            data : data,
+            contentType: false,
+            processData: false,
+            dataType : "json",
+            success:function(response)
+            {
+                if(response.status == "success")
+                {
+                    location.reload();
+                }
+                else
+                {
+                    alert(response.message);
+                    $('#submit_sub_cat_btn_'+cat_id+'').prop('disabled',false);
+                }
+                console.log(response);
+            }
+
+        });
+    });
 }
 $('#reject_sub_cat').click(function(e){
     e.preventDefault();

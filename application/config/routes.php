@@ -58,5 +58,6 @@ $route['categories'] = 'Admin/Admin_controller/categories';
 $route['products'] = 'Admin/Admin_controller/products';
 $route['createnewmaincat'] = 'Admin/Admin_controller/createnewmaincat';
 $route['delete_cat'] = 'Admin/Admin_controller/delete_cat';
+$route['add_new_sub_cat'] = 'Admin/Admin_controller/add_new_sub_cat';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
