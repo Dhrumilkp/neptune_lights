@@ -27,30 +27,43 @@ class Admin_model extends CI_Model
             }
             else
             {
-                $data = array(
-                    'name' => $catname,
-                    'created_on' => date("Y/m/d")
-                );
-                $this->db->insert('nep_main_categories',$data);
-                if($this->db->affected_rows() > 0)
-                {
-                    $id = $this->db->insert_id();
-                    $response = array(
-                        'status' => 'success',
-                        'message' => 'created new cat',
-                        'cat_name' => $catname,
-                        'id' => $id
-                    );
-                    echo json_encode($response);
-                } 
-                else
-                {
-                    $response = array(
-                        'status' => 'err',
-                        'message' => 'failed to create new cat'
-                    );
-                    echo json_encode($response);
+                // Upload image to a folder
+                $create_path = "uploads/cat_img/";
+                if (!file_exists($create_path)) {
+                    mkdir($create_path, 0777, true);
                 }
+                if( $_FILES['cat_img']['name'] != "" ) {
+                    $path=$_FILES['cat_img']['name'];
+                    $pathto="uploads/cat_img/".$path;
+                    move_uploaded_file( $_FILES['cat_img']['tmp_name'],$pathto) or die( "Could not copy file!");
+                    // Save the data
+                    $data = array(
+                        'name' => $catname,
+                        'img_path' => $pathto,
+                        'created_on' => date("Y/m/d")
+                    );
+                    $this->db->insert('nep_main_categories',$data);
+                    if($this->db->affected_rows() > 0)
+                    {
+                        $id = $this->db->insert_id();
+                        $response = array(
+                            'status' => 'success',
+                            'message' => 'created new cat',
+                            'cat_name' => $catname,
+                            'id' => $id
+                        );
+                        echo json_encode($response);
+                    } 
+                    else
+                    {
+                        $response = array(
+                            'status' => 'err',
+                            'message' => 'failed to create new cat'
+                        );
+                        echo json_encode($response);
+                    }
+                }
+
             }
         } 
     } 

@@ -8,15 +8,17 @@ $('#create_new_cat_form').submit(function(e){
     else
     {
         $('#submit_button_new_cat').prop('disabled',true);
+        var formdata = new FormData(this);
         $.ajax({
             url : ''+url+'createnewmaincat',
             method : "post",
-            data : {
-                cat_name : cat_name
-            },
+            data : formdata,
+            contentType: false,
+            processData: false,
             dataType : "json",
             success:function(response)
             {
+                console.log(response);
                 if(response.status == "success")
                 {
                     location.reload();

@@ -25,10 +25,12 @@
               <div class="card">
                 <div class="card-body">
                   <h4 class="card-title">Create new categories</h4>
-                  <form class="forms-sample" id="create_new_cat_form">
+                  <form class="forms-sample" id="create_new_cat_form" enctype="multipart/form-data">
                     <div class="form-group">
                       <label for="exampleInputName1">Name</label>
-                      <input type="text" class="form-control" id="cat_name" placeholder="Name">
+                      <input type="text" class="form-control" id="cat_name" name="cat_name" placeholder="Name" required>
+                      <label for="upload_img"></label>
+                      <input type="file" accept=".jpg" class="form-control" id="cat_img" name="cat_img" placeholder="Upload image" required/>
                     </div>
                     <button type="submit" class="btn btn-primary me-2" style="color:white;" id="submit_button_new_cat">Submit</button>
                   </form>
