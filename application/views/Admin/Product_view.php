@@ -122,6 +122,12 @@
                       <?
                     }
                   }
+                  else
+                  {
+                    ?>
+                      <p>Please upload new product to view them</p>
+                    <?
+                  }
                 ?>
               </div>
             </div>
