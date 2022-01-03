@@ -104,6 +104,7 @@ function delete_sub_cat(caller)
         data : {
             sub_cat_id : sub_cat_id
         },
+        dataType : "json",
         success:function(response)
         {
             if(response.status == "success")

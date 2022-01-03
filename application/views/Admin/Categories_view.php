@@ -73,7 +73,7 @@
                             {
                               ?>
                                 <tr>
-                                  <td><?php echo $row['name']; ?></td>
+                                  <td><b><?php echo $row['name']; ?></b></td>
                                   <td>
                                     <div class="wrapper_action" style="display:flex;width:20%;justify-content:space-between;">
                                       <a href="javascript:void;" data-id="<?php echo $row['id']; ?>" onclick="delete_cat(this)"><i class="lni lni-cross-circle" style="font-size: x-large;"></i></a>
@@ -103,12 +103,15 @@
                                   {
                                     foreach($subcategories as $sub_cat)
                                     {
-                                      ?>
-                                        <tr>
-                                          <td style="padding-left:50px;border-bottom:0px;"><?php echo $sub_cat['name']; ?></td>
-                                          <td><a href="javascript:void;" data-id="<?php echo $sub_cat['id']; ?>" onclick="delete_sub_cat(this)"><i class="lni lni-cross-circle" style="font-size: x-large;"></i></a></td>
-                                        </tr>                 
-                                      <?
+                                      if($sub_cat['main_cat'] == $row['id'])
+                                      {
+                                        ?>
+                                          <tr>
+                                            <td style="padding-left:50px;border-bottom:0px;color:gray;"><?php echo $sub_cat['name']; ?></td>
+                                            <td style="border-bottom:0px;"><a href="javascript:void;" data-id="<?php echo $sub_cat['id']; ?>" onclick="delete_sub_cat(this)" style="color:purple;"><i class="lni lni-cross-circle" style="font-size: x-large;"></i></a></td>
+                                          </tr>                 
+                                        <?
+                                      }
                                     }
                                   }
                                 ?>
