@@ -81,9 +81,25 @@
                                     </div>
                                   </td>
                                 </tr>  
-                                <tr>
+                                <tr class="add_sub_cat_wrapper_<?php echo $row['id']; ?>" style="display:none;">
+                                  <td>
+                                    <div style="width:100%;">
+                                      <form class="forms-sample" id="create_new_sub_cat" enctype="multipart/form-data">
+                                        <div class="form-group">
+                                          <label for="exampleInputName1">Name</label>
+                                          <input type="text" class="form-control" id="sub_cat_name" name="sub_cat_name" placeholder="Name" required>
+                                          <label for="upload_img"></label>
+                                          <input type="file" accept=".jpg" class="form-control" id="sub_cat_img" name="sub_cat_img" placeholder="Upload image" required/>
+                                        </div>
+                                        <button type="submit" class="btn btn-primary me-2" style="color:white;" id="submit_sub_cat_btn">Submit</button>
+                                        <button type="submit" class="btn btn-danger me-2" style="color:white;" id="reject_sub_cat" data-id="<?php echo $row['id']; ?>">Close</button>
+                                      </form>
+                                    </div>
+                                  </td>
+                                </tr>
+                                <!-- <tr>
                                   <td style="padding-left:50px;border-bottom:0px;">This</td>
-                                </tr>                 
+                                </tr>                  -->
                               <?
                             }
                           } 

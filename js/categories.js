@@ -57,3 +57,13 @@ function delete_cat(caller)
         }
     })
 }
+function add_sub_cat(caller)
+{
+    var cat_id = $(caller).attr('data-id');
+    $('.add_sub_cat_wrapper_'+cat_id+'').show();
+}
+$('#reject_sub_cat').click(function(e){
+    e.preventDefault();
+    var cat_id = $(this).attr('data-id');
+    $('.add_sub_cat_wrapper_'+cat_id+'').hide();
+});
