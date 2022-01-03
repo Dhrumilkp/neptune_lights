@@ -226,23 +226,30 @@ class Admin_model extends CI_Model
             }
             // Upload product to folder
             if( $_FILES['product_img']['name'] != "" ) {
-                $img_path = array();
-                foreach($_FILES['product_img'] as $row)
-                {
+                // Counting the number of files
+                $total = count($_FILES);
+                // Checking the path
+                $create_path = "uploads/products/";
+                if (!file_exists($create_path)) {
+                    mkdir($create_path, 0777, true);
+                }
+                // Creating an empty array
+                $img_array = array();
+                // Loop through each file
+                for( $i=0 ; $i < $total ; $i++ ) {
                     $path=$_FILES['product_img']['name'];
                     $pathto="uploads/products/".$path;
                     move_uploaded_file( $_FILES['product_img']['tmp_name'],$pathto) or die( "Could not copy file!");
-                    // push data to database
-                    array_push($img_path, $pathto);
+                    array_push($img_array,$pathto);
                 }
-                $img_path = serialize($img_path);
+                $img_paths = serialize($img_array);
                 $data = array(
                     'main_cat' => $_POST['select_main_cat_id'],
                     'sub_cat'  => $_POST['select_sub_cat_id'],
                     'title'    => $_POST['product_name'],
                     'description' => $_POST['product_description'],
                     'created_on'  => date("Y/m/d"),
-                    'img_paths'  => $img_path
+                    'img_paths'  => $img_paths
                 );
                 $this->db->insert('nep_products',$data);
                 if($this->db->affected_rows() > 0)

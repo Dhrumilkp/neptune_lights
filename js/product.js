@@ -21,7 +21,15 @@ $(document).on('submit','#create_new_product_form',function(e){
         dataType : "json",
         success:function(response)
         {
-            console.log(response);
+            if(response.status == "success")
+            {
+                location.reload();
+            }
+            else
+            {
+                alert(response.message);
+                $('#submit_new_product_btn').prop('disabled',false);
+            }
         }
     });
 });
