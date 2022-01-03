@@ -4,6 +4,11 @@
   <?php $this->load->view('Admin/Header'); ?>
   <title>Neptune Lights | Categories</title>
   <link rel="stylesheet" href="https://cdn.lineicons.com/3.0/lineicons.css"> 
+  <style>
+    .sub_cat_wrapper{
+      padding-left: 50px;
+    }
+  </style>
 </head>
 <body>
 <div class="container-scroller">
@@ -72,9 +77,13 @@
                                   <td>
                                     <div class="wrapper_action" style="display:flex;width:20%;justify-content:space-between;">
                                       <a href="javascript:void;" data-id="<?php echo $row['id']; ?>" onclick="delete_cat(this)"><i class="lni lni-cross-circle" style="font-size: x-large;"></i></a>
+                                      <a href="javascript:void;" data-id="<?php echo $row['id']; ?>" onclick="add_sub_cat(this)"><i class="lni lni-circle-plus" style="font-size: x-large;"></i></a>
                                     </div>
                                   </td>
-                                </tr>                              
+                                </tr>  
+                                <tr>
+                                  <td style="padding-left:50px;border-bottom:0px;">This</td>
+                                </tr>                 
                               <?
                             }
                           } 
