@@ -111,4 +111,19 @@ Class Admin_controller extends CI_Controller
             echo json_encode($response);
         }
     }
+    public function delete_sub_cat()
+    {
+        if(isset($_SESSION['firstname']))
+        {
+            $this->Admin_model->delete_sub_cata($_POST['sub_cat_id']);
+        }
+        else
+        {
+            $response = array(
+                'status' => 'err',
+                'message' => 'Not authorized'
+            );
+            echo json_encode($response);
+        }
+    }
 }

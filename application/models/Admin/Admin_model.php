@@ -194,4 +194,25 @@ class Admin_model extends CI_Model
             return false;
         }
     }
+    public function delete_sub_cata($sub_cat_id)
+    {
+        // Check for exisiting product add that later
+
+        $this->db->where('id',$sub_cat_id);
+        if($this->db->delete('nep_sub_categories'))
+        {
+            $response = array(
+                'status' => 'success'
+            );
+            echo json_encode($response);
+        }
+        else
+        {
+            $response = array(
+                'status' => 'err',
+                'message' => 'Cannot delete this cat'
+            );
+            echo json_encode($response);
+        }
+    }
 }

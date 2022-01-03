@@ -94,3 +94,28 @@ $('#reject_sub_cat').click(function(e){
     var cat_id = $(this).attr('data-id');
     $('.add_sub_cat_wrapper_'+cat_id+'').hide();
 });
+
+function delete_sub_cat(caller)
+{
+    var sub_cat_id = $(caller).attr('data-id');
+    $.ajax({
+        url : ""+url+"delete_sub_cat",
+        method : "post",
+        data : {
+            sub_cat_id : sub_cat_id
+        },
+        success:function(response)
+        {
+            if(response.status == "success")
+            {
+                location.reload();
+            }
+            else
+            {
+                alert(response.message);
+            }
+            console.log(response);
+        }
+    });
+
+}
