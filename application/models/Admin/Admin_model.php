@@ -82,22 +82,38 @@ class Admin_model extends CI_Model
     }  
     public function delete_cat_id($id)
     {
-        $this->db->where('id',$id);
-        if($this->db->delete('nep_main_categories'))
+        // Check if there is sub cat 
+        $this->db->where('main_cat',$id);
+        $query = $this->db->get('nep_sub_categories');
+        if($query->num_rows() > 0)
         {
             $response = array(
-                'status' => 'success'
+                'status' => 'err',
+                'message' => 'you cannot delete the main category you need to delete the sub cat first'
             );
             echo json_encode($response);
         }
         else
         {
-            $response = array(
-                'status' => 'err',
-                'message' => 'Cannot delete this cat'
-            );
-            echo json_encode($response);
+            // 
+            $this->db->where('id',$id);
+            if($this->db->delete('nep_main_categories'))
+            {
+                $response = array(
+                    'status' => 'success'
+                );
+                echo json_encode($response);
+            }
+            else
+            {
+                $response = array(
+                    'status' => 'err',
+                    'message' => 'Cannot delete this cat'
+                );
+                echo json_encode($response);
+            }
         }
+       
     }
     public function add_new_sub_cat_model()
     {
@@ -163,6 +179,19 @@ class Admin_model extends CI_Model
                 }
                 
             }
+        }
+    }
+    public function get_all_subcat()
+    {
+        $this->db->limit(5);
+        $query = $this->db->get('nep_sub_categories');
+        if($query -> num_rows() > 0){
+            $result = $query->result_array();
+            return $result;
+        }
+        else
+        {
+            return false;
         }
     }
 }

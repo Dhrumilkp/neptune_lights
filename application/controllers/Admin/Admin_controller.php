@@ -47,6 +47,7 @@ Class Admin_controller extends CI_Controller
         if(isset($_SESSION['firstname']))
         {
             $data['categories'] = $this->Admin_model->get_all_cat();
+            $data['subcategories'] = $this->Admin_model->get_all_subcat();
             $this->load->view('Admin/Categories_view',$data);
         }
         else

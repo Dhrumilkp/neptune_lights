@@ -98,9 +98,20 @@
                                     </div>
                                   </td>
                                 </tr>
-                                <!-- <tr>
-                                  <td style="padding-left:50px;border-bottom:0px;">This</td>
-                                </tr>                  -->
+                                <?php 
+                                  if(!empty($subcategories))
+                                  {
+                                    foreach($subcategories as $sub_cat)
+                                    {
+                                      ?>
+                                        <tr>
+                                          <td style="padding-left:50px;border-bottom:0px;"><?php echo $sub_cat['name']; ?></td>
+                                          <td><a href="javascript:void;" data-id="<?php echo $sub_cat['id']; ?>" onclick="delete_sub_cat(this)"><i class="lni lni-cross-circle" style="font-size: x-large;"></i></a></td>
+                                        </tr>                 
+                                      <?
+                                    }
+                                  }
+                                ?>
                               <?
                             }
                           } 
