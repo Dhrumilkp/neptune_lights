@@ -239,7 +239,8 @@ class Admin_model extends CI_Model
                     
                     $path=$_FILES['product_img']['name'];
                     $pathto="uploads/products/".time().$path;
-                    move_uploaded_file($_FILES['product_img']['tmp_name'],$pathto) or die("error");
+                    // Find the issue in the file upload error
+                    move_uploaded_file($_FILES['product_img']['tmp_name'],$pathto) or die("Error in upload");
                     array_push($img_array,$pathto);
                 }
                 $img_paths = serialize($img_array);
