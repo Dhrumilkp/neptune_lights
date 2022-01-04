@@ -236,9 +236,10 @@ class Admin_model extends CI_Model
                 $img_array = array();
                 // Loop through each file
                 for( $i=0 ; $i < $total ; $i++ ) {
+                    
                     $path=$_FILES['product_img']['name'];
-                    $pathto="uploads/products/".$path;
-                    move_uploaded_file( $_FILES['product_img']['tmp_name'],$pathto) or die( "Could not copy file!");
+                    $pathto="uploads/products/".time().$path;
+                    move_uploaded_file($_FILES['product_img']['tmp_name'],$pathto) or die("error");
                     array_push($img_array,$pathto);
                 }
                 $img_paths = serialize($img_array);
