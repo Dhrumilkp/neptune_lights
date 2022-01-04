@@ -226,7 +226,7 @@ class Admin_model extends CI_Model
             // Upload product to folder
             if( $_FILES['product_img']['name'] != "" ) {
                 // Counting the number of files
-                $total = count($_FILES['product_img']);
+                $total = count($_FILES['product_img']['name']);
                 // Checking the path
                 $create_path = "uploads/products/";
                 if (!file_exists($create_path)) {
@@ -235,14 +235,17 @@ class Admin_model extends CI_Model
                 // Creating an empty array
                 $img_array = array();
                 // Loop through each file
-                for( $i=0 ; $i < $total ; $i++ ) {
-                    
-                    $path=$_FILES['product_img']['name'];
-                    $pathto="uploads/products/".time().$path;
-                    // Find the issue in the file upload error
-                    move_uploaded_file($_FILES['product_img']['tmp_name'],$pathto) or die("Error in upload");
-                    array_push($img_array,$pathto);
+                for( $i=0 ; $i < $total ; $i++ ) { 
+                    foreach($_FILES as $key => $value)
+                    {
+                        $path=$value['name'];
+                        $pathto="uploads/products/".time().$path;
+                        // Find the issue in the file upload error
+                        move_uploaded_file($value['tmp_name'],$pathto) or die("Error in upload");
+                        array_push($img_array,$pathto);
+                    }
                 }
+                die();
                 $img_paths = serialize($img_array);
                 $data = array(
                     'main_cat' => $_POST['select_main_cat_id'],

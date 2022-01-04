@@ -58,7 +58,7 @@
                         <textarea class="form-control" placeholder="Enter product description" name="product_description" id="product_textarea" rows="4" required></textarea>
                       </div>
                       <label for="upload_img"></label>
-                      <input type="file" accept=".jpg" class="form-control" id="product_img" name="product_img" placeholder="Upload image" required multiple/>
+                      <input type="file" accept=".jpg" class="form-control" id="product_img" name="product_img[]" placeholder="Upload image" required multiple/>
                     </div>
                     <button type="submit" class="btn btn-primary me-2" style="color:white;" id="submit_new_product_btn">Submit</button>
                   </form>
