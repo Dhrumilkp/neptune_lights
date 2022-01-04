@@ -359,4 +359,16 @@ class Admin_model extends CI_Model
             return false;
         }
     }
+    public function get_all_product_for_front()
+    {
+        $query = $this->db->get('nep_products');
+        if($query -> num_rows() > 0){
+            $result = $query->result_array();
+            return $result;
+        }
+        else
+        {
+            return false;
+        }
+    }
 }

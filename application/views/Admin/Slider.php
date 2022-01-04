@@ -35,6 +35,19 @@
                                     <div class="form-group">
                                     <label for="exampleInputName1">Slider Caption</label>
                                     <input type="text" class="form-control" id="slider_cap" name="slider_cap" placeholder="Enter the caption of the slide" required>
+                                    <label style="margin-top:10px;">Select one product for slider</label>
+                                    <select class="form-select" aria-label="Default select example" name="select_product" id="select_product" style="margin-bottom:20px;" required>
+                                      <option selected>Open to select product</option>
+                                      <?php 
+                                        foreach($products as $row)
+                                        {
+                                          
+                                          ?>
+                                            <option value="<?php echo $row['id']; ?>"><?php echo $row['title']; ?></option> 
+                                          <?
+                                        }
+                                      ?>
+                                    </select>
                                     <label for="upload_img">Slider Image</label>
                                     <input type="file" accept=".jpg" class="form-control" id="slider_img" name="slider_img" placeholder="Upload image" required/>
                                     </div>

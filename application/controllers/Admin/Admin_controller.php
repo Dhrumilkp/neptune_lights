@@ -156,6 +156,7 @@ Class Admin_controller extends CI_Controller
         if(isset($_SESSION['firstname']))
         {
             $data['sliders_data'] = $this->Admin_model->get_all_sliders();
+            $data['products'] = $this->Admin_model->get_all_product();
             $this->load->view('Admin/Slider',$data);
         }
         else
