@@ -224,29 +224,38 @@ class Admin_model extends CI_Model
                 mkdir($create_path, 0777, true);
             }
             // Upload product to folder
-            if( $_FILES['product_img']['name'] != "" ) {
-                // Counting the number of files
-                $total = count($_FILES['product_img']['name']);
+            if($_FILES['product_img']['name'] != "" ) {
                 // Checking the path
                 $create_path = "uploads/products/";
                 if (!file_exists($create_path)) {
                     mkdir($create_path, 0777, true);
                 }
-                // Creating an empty array
-                $img_array = array();
-                // Loop through each file
-                for( $i=0 ; $i < $total ; $i++ ) { 
-                    foreach($_FILES as $key => $value)
-                    {
-                        $path=$value['name'];
-                        $pathto="uploads/products/".time().$path;
-                        // Find the issue in the file upload error
-                        move_uploaded_file($value['tmp_name'],$pathto) or die("Error in upload");
-                        array_push($img_array,$pathto);
+                $imgs_src = array();
+                $error=array();
+                $extension=array("jpg");
+                foreach($_FILES["product_img"]["tmp_name"] as $key=>$tmp_name) {
+
+                    $file_name=time().$_FILES["product_img"]["name"][$key];
+                    $file_tmp=$_FILES["product_img"]["tmp_name"][$key];
+                    $ext=pathinfo($file_name,PATHINFO_EXTENSION);
+
+                    if(in_array($ext,$extension)) {
+                        if(!file_exists("uploads/products/".$file_name)) {
+                            move_uploaded_file($file_tmp=$_FILES["product_img"]["tmp_name"][$key],"uploads/products/".$file_name);
+                            array_push($imgs_src,'uploads/products/'.$file_name.'');
+                        }
+                        else {
+                            $filename=basename($file_name,$ext);
+                            $newFileName=$filename.time().".".$ext;
+                            move_uploaded_file($file_tmp=$_FILES["product_img"]["tmp_name"][$key],"uploads/products/".$newFileName);
+                            array_push($imgs_src,'uploads/products/'.$file_name.'');
+                        }
+                    }
+                    else {
+                        array_push($error,"$file_name, ");
                     }
                 }
-                die();
-                $img_paths = serialize($img_array);
+                $img_paths = serialize($imgs_src);
                 $data = array(
                     'main_cat' => $_POST['select_main_cat_id'],
                     'sub_cat'  => $_POST['select_sub_cat_id'],
