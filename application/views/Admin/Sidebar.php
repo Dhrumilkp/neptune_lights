@@ -17,6 +17,11 @@
                     <span class="menu-title">Products</span>
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="<?php echo base_url(); ?>landing_page">
+                    <span class="menu-title">Landing Page</span>
+                    </a>
+                </li>
             </ul>
         </nav>
     <?

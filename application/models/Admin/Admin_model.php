@@ -297,4 +297,54 @@ class Admin_model extends CI_Model
             return false;
         }
     }
+    public function create_new_slider()
+    {
+        $query = $this->db->get('nep_sliders');
+        if($query->num_rows() > 4)
+        {
+            $response = array(
+                'status' => 'err',
+                'message' => 'you cannot create more sliders reach out to info@kpitotal.com'
+            );
+            echo json_encode($response);
+        }
+        else
+        {
+            // Upload image to folder
+            $create_path = "uploads/sliders/";
+            if (!file_exists($create_path)) {
+                mkdir($create_path, 0777, true);
+            }
+            if( $_FILES['slider_img']['name'] != "" ) {
+                $path=$_FILES['slider_img']['name'];
+                $pathto="uploads/sliders/".$path;
+                move_uploaded_file( $_FILES['slider_img']['tmp_name'],$pathto) or die( "Could not copy file!");
+                // Push data to database
+
+                $data = array(
+                    'caption' => $_POST['slider_cap'],
+                    'img_path' => $pathto,
+                    'created_on' => date("Y/m/d")
+                );
+                $this->db->insert('nep_sliders',$data);
+                if($this->db->affected_rows() > 0)
+                {
+                    $id = $this->db->insert_id();
+                    $response = array(
+                        'status' => 'success',
+                        'message' => 'created new slider'
+                    );
+                    echo json_encode($response);
+                } 
+                else
+                {
+                    $response = array(
+                        'status' => 'err',
+                        'message' => 'failed to create new slider'
+                    );
+                    echo json_encode($response);
+                }
+            }  
+        }
+    }
 }

@@ -151,4 +151,34 @@ Class Admin_controller extends CI_Controller
             echo json_encode($response);
         }
     }
+    public function landing_page()
+    {
+        if(isset($_SESSION['firstname']))
+        {
+            $this->load->view('Admin/Landing_page');
+        }
+        else
+        {
+            $response = array(
+                'status' => 'err',
+                'message' => 'Not authorized'
+            );
+            echo json_encode($response);
+        } 
+    }
+    public function createnew_slider()
+    {
+        if(isset($_SESSION['firstname']))
+        {
+            $this->Admin_model->create_new_slider();
+        }
+        else
+        {
+            $response = array(
+                'status' => 'err',
+                'message' => 'Not authorized'
+            );
+            echo json_encode($response);
+        } 
+    }
 }
