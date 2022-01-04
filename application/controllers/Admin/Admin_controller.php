@@ -151,11 +151,12 @@ Class Admin_controller extends CI_Controller
             echo json_encode($response);
         }
     }
-    public function landing_page()
+    public function sliders()
     {
         if(isset($_SESSION['firstname']))
         {
-            $this->load->view('Admin/Landing_page');
+            $data['sliders_data'] = $this->Admin_model->get_all_sliders();
+            $this->load->view('Admin/Slider',$data);
         }
         else
         {

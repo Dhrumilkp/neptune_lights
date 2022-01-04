@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <?php $this->load->view('Admin/Header'); ?>
-  <title>Landing Edits | Categories</title>
+  <title>Neptune Lights | Sliders</title>
   <link rel="stylesheet" href="https://cdn.lineicons.com/3.0/lineicons.css"> 
   <style>
     .sub_cat_wrapper{
@@ -44,6 +44,29 @@
                         </div>
                     </div>
                 </div>
+            </div>
+            <hr>
+            <div class="row">
+              <?php 
+                foreach($sliders_data as $row)
+                {
+                  ?>
+                    <div class="col-md-6 col-lg-6">
+                      <div class="card">
+                          <div class="card-body">
+                              <div class="slider_wrapper" style="display:flex;flex-direction: column;">
+                                  <img class="slider_img_wrapper" src="<?php echo base_url(); ?><?php echo $row['img_path']; ?>"/>
+                                  <p style="margin-top:10px;"><?php echo $row['caption']; ?></p>
+                                  <div class="action_wrapper" style="display:flex;width:100%;justify-content: space-between;">
+                                      <button class="btn btn-danger" style="color:white;">Delete</button>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                    </div>
+                  <?
+                }
+              ?>
             </div>
         </div>
         <!-- content-wrapper ends -->

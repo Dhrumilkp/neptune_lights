@@ -18,8 +18,8 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="<?php echo base_url(); ?>landing_page">
-                    <span class="menu-title">Landing Page</span>
+                    <a class="nav-link" href="<?php echo base_url(); ?>sliders">
+                    <span class="menu-title">Sliders</span>
                     </a>
                 </li>
             </ul>

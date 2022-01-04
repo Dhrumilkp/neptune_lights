@@ -347,4 +347,16 @@ class Admin_model extends CI_Model
             }  
         }
     }
+    public function get_all_sliders()
+    {
+        $query = $this->db->get('nep_sliders');
+        if($query -> num_rows() > 0){
+            $result = $query->result_array();
+            return $result;
+        }
+        else
+        {
+            return false;
+        }
+    }
 }
