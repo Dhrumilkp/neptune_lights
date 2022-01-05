@@ -1,3 +1,24 @@
+
+var _URL = window.URL || window.webkitURL;
+$("#slider_img").change(function (e) {
+    var file, img;
+    if ((file = this.files[0])) {
+        img = new Image();
+        var objectUrl = _URL.createObjectURL(file);
+        img.onload = function () {
+            if(this.width < 1200 && this.height < 800)
+            {
+                $('#submit_click_hero_slider').prop('disabled',true);
+            }
+            else
+            {
+                $('#submit_click_hero_slider').prop('disabled',false);
+            }
+            _URL.revokeObjectURL(objectUrl);
+        };
+        img.src = objectUrl;
+    }
+});
 $(document).on('submit','#create_new_slider',function(e){
     e.preventDefault();
     var new_form_data = new FormData(this);
