@@ -5,6 +5,7 @@
         $this->load->view('Admin/Header');
     ?>
     <title>Neptune Lights | Products</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/croppie/2.6.5/croppie.min.css" integrity="sha512-zxBiDORGDEAYDdKLuYU9X/JaJo/DPzE42UubfBw9yg8Qvb2YRRIQ8v4KsGHOx2H1/+sdSXyXxLXv5r7tHc9ygg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
 <div class="container-scroller">
@@ -142,10 +143,29 @@
       <!-- main-panel ends -->
     </div>
     <!-- page-body-wrapper ends -->
+    <!-- Crop image model -->
+    <div class="modal" tabindex="-1" id="image_cropper_modal">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Crop Image</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div id="image_demo"></div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" style="color:white;">Close</button>
+            <button type="button" class="btn btn-primary" id="crop_image_modal" style="color:white;">Crop Image</button>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
   <?php 
     $this->load->view('Admin/Footer');
   ?>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/croppie/2.6.5/croppie.min.js" integrity="sha512-Gs+PsXsGkmr+15rqObPJbenQ2wB3qYvTHuJO6YJzPe/dTLvhy0fmae2BcnaozxDo5iaF8emzmCZWbQ1XXiX2Ig==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="<?php echo base_url(); ?>js/const.js"></script>
   <script src="<?php echo base_url(); ?>js/product.js"></script>
 </body>

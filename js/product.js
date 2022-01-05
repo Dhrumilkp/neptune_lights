@@ -56,7 +56,3 @@ $('#delete_product_btn').click(function(e){
         }
     });
 });
-$("#product_img").change(function (e) {
-    // Cropper
-    
-});
