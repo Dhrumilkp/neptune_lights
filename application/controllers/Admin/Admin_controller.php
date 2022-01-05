@@ -198,4 +198,19 @@ Class Admin_controller extends CI_Controller
             echo json_encode($response);
         }
     }
+    public function delete_slider_from_page()
+    {
+        if(isset($_SESSION['firstname']))
+        {
+            $this->Admin_model->delete_a_slider_from_page();
+        }
+        else
+        {
+            $response = array(
+                'status' => 'err',
+                'message' => 'Not authorized'
+            );
+            echo json_encode($response);
+        }
+    }
 }

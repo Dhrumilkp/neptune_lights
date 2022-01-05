@@ -20,7 +20,30 @@ $(document).on('submit','#create_new_slider',function(e){
                 $('#submit_click_hero_slider').prop('disabled',false);
                 alert(response.message);
             }
-            console.log(response);
+        }
+    });
+});
+
+$('.delete_slider_from_db').click(function(e){
+    e.preventDefault();
+    var slider_id = $(this).attr('data-id');
+    $.ajax({
+        url : ""+url+"delete_slider_from_page",
+        method : "post",
+        data : {
+            slider_id : slider_id
+        },
+        dataType : "json",
+        success : function(response)
+        {
+            if(response.status == "success")
+            {
+                location.reload();
+            }
+            else
+            {
+                alert(response.message);
+            }
         }
     });
 });

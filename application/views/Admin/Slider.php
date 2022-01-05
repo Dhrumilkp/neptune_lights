@@ -71,7 +71,7 @@
                                   <img class="slider_img_wrapper" src="<?php echo base_url(); ?><?php echo $row['img_path']; ?>"/>
                                   <p style="margin-top:10px;"><?php echo $row['caption']; ?></p>
                                   <div class="action_wrapper" style="display:flex;width:100%;justify-content: space-between;">
-                                      <button class="btn btn-danger" style="color:white;">Delete</button>
+                                      <button class="btn btn-danger delete_slider_from_db" style="color:white;" data-id="<?php echo $row['id']; ?>" >Delete</button>
                                   </div>
                               </div>
                           </div>

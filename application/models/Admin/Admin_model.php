@@ -403,4 +403,23 @@ class Admin_model extends CI_Model
             echo json_encode($response);
         }
     }
+    public function delete_a_slider_from_page()
+    {
+        $this->db->where('id',$_POST['slider_id']);
+        if($this->db->delete('nep_sliders'))
+        {
+            $response = array(
+                'status' => 'success'
+            );
+            echo json_encode($response);
+        }
+        else
+        {
+            $response = array(
+                'status' => 'err',
+                'message' => 'Cannot delete this cat'
+            );
+            echo json_encode($response);
+        }
+    }
 }
