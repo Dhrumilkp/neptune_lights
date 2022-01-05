@@ -61,22 +61,31 @@
             <hr>
             <div class="row">
               <?php 
-                foreach($sliders_data as $row)
+                if(!empty($sliders_data))
+                {
+                  foreach($sliders_data as $row)
+                  {
+                    ?>
+                      <div class="col-md-6 col-lg-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="slider_wrapper" style="display:flex;flex-direction: column;">
+                                    <img class="slider_img_wrapper" src="<?php echo base_url(); ?><?php echo $row['img_path']; ?>"/>
+                                    <p style="margin-top:10px;"><?php echo $row['caption']; ?></p>
+                                    <div class="action_wrapper" style="display:flex;width:100%;justify-content: space-between;">
+                                        <button class="btn btn-danger delete_slider_from_db" style="color:white;" data-id="<?php echo $row['id']; ?>" >Delete</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                      </div>
+                    <?
+                  }
+                }
+                else
                 {
                   ?>
-                    <div class="col-md-6 col-lg-6">
-                      <div class="card">
-                          <div class="card-body">
-                              <div class="slider_wrapper" style="display:flex;flex-direction: column;">
-                                  <img class="slider_img_wrapper" src="<?php echo base_url(); ?><?php echo $row['img_path']; ?>"/>
-                                  <p style="margin-top:10px;"><?php echo $row['caption']; ?></p>
-                                  <div class="action_wrapper" style="display:flex;width:100%;justify-content: space-between;">
-                                      <button class="btn btn-danger delete_slider_from_db" style="color:white;" data-id="<?php echo $row['id']; ?>" >Delete</button>
-                                  </div>
-                              </div>
-                          </div>
-                      </div>
-                    </div>
+                    <p>Please create new slider to see it </p>
                   <?
                 }
               ?>
