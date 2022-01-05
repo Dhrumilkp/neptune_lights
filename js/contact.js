@@ -10,7 +10,14 @@ $(document).on('submit','#update_Contact_Info',function(e){
         dataType : "json",
         success:function(response)
         {
-            console.log(response);
+            if(response.status == "success")
+            {
+                location.reload();
+            }
+            else
+            {
+                alert(response.message);
+            }
         }
     });
 });
