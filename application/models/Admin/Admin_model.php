@@ -336,6 +336,7 @@ class Admin_model extends CI_Model
 
                 $data = array(
                     'caption' => $_POST['slider_cap'],
+                    'product_id' => $_POST['select_product'],
                     'img_path' => $pathto,
                     'created_on' => date("Y/m/d")
                 );
