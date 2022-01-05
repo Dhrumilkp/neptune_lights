@@ -213,4 +213,19 @@ Class Admin_controller extends CI_Controller
             echo json_encode($response);
         }
     }
+    public function contactus()
+    {
+        if(isset($_SESSION['firstname']))
+        {
+            $this->load->view('Admin/Contact');
+        }
+        else
+        {
+            $response = array(
+                'status' => 'err',
+                'message' => 'Not authorized'
+            );
+            echo json_encode($response);
+        }
+    }
 }

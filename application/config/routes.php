@@ -65,5 +65,6 @@ $route['sliders'] = 'Admin/Admin_controller/sliders';
 $route['createnew_slider'] = 'Admin/Admin_controller/createnew_slider';
 $route['delete_a_product'] = 'Admin/Admin_controller/delete_a_product';
 $route['delete_slider_from_page'] = 'Admin/Admin_controller/delete_slider_from_page';
+$route['contactus'] = 'Admin/Admin_controller/contactus';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

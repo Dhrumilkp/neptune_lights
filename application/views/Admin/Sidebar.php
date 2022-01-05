@@ -18,8 +18,13 @@
                     </a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link" href="<?php echo base_url(); ?>contactus">
+                    <span class="menu-title">Contact Us</span>
+                    </a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="<?php echo base_url(); ?>sliders">
-                    <span class="menu-title">Sliders</span>
+                    <span class="menu-title">Misc</span>
                     </a>
                 </li>
             </ul>
