@@ -58,8 +58,14 @@
                         <label for="exampleTextarea1">Textarea</label>
                         <textarea class="form-control" placeholder="Enter product description" name="product_description" id="product_textarea" rows="4" required></textarea>
                       </div>
-                      <label for="upload_img"></label>
+                      <label for="upload_img">Select product image</label>
                       <input type="file" accept=".jpg" class="form-control" id="product_img" name="product_img[]" placeholder="Upload image" required multiple/>
+                      <div class="form-check" style="margin-top:20px;padding-left: 25px;">
+                        <input class="form-check-input" type="radio" name="new_product" id="new_product">
+                        <label class="form-check-label" for="new_product" style="margin-left:1rem;">
+                          Is this a new product ?
+                        </label>
+                      </div>
                     </div>
                     <button type="submit" class="btn btn-primary me-2" style="color:white;" id="submit_new_product_btn">Submit</button>
                   </form>
@@ -143,24 +149,6 @@
       <!-- main-panel ends -->
     </div>
     <!-- page-body-wrapper ends -->
-    <!-- Crop image model -->
-    <div class="modal" tabindex="-1" id="image_cropper_modal">
-      <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title">Crop Image</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <div id="image_demo"></div>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" style="color:white;">Close</button>
-            <button type="button" class="btn btn-primary" id="crop_image_modal" style="color:white;">Crop Image</button>
-          </div>
-        </div>
-      </div>
-    </div>
   </div>
   <?php 
     $this->load->view('Admin/Footer');

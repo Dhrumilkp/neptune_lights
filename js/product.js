@@ -10,7 +10,15 @@ $("#select_main_cat").change(function() {
 
 $(document).on('submit','#create_new_product_form',function(e){
     e.preventDefault();
+    if($('#new_product').is(':checked')) { 
+       var new_arrival = '1';
+    }
+    else
+    {
+        var new_arrival = '0';
+    }
     var productData = new FormData(this);
+    FormData.append('new_arrival',new_arrival);
     $('#submit_new_product_btn').prop('disabled',true);
     $.ajax({
         url : ""+url+"upload_new_product",

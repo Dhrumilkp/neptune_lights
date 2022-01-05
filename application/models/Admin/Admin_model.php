@@ -275,6 +275,7 @@ class Admin_model extends CI_Model
                     'title'    => $_POST['product_name'],
                     'description' => $_POST['product_description'],
                     'created_on'  => date("Y/m/d"),
+                    'new_arrivals' => $_POST['new_arrival'],
                     'img_paths'  => $img_paths
                 );
                 $this->db->insert('nep_products',$data);
