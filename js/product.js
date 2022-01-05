@@ -18,7 +18,7 @@ $(document).on('submit','#create_new_product_form',function(e){
         var new_arrival = '0';
     }
     var productData = new FormData(this);
-    FormData.append('new_arrival',new_arrival);
+    productData.append('new_arrival',new_arrival);
     $('#submit_new_product_btn').prop('disabled',true);
     $.ajax({
         url : ""+url+"upload_new_product",
