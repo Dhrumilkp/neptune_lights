@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <?php $this->load->view('Admin/Header'); ?>
-  <title>Neptune Lights | Sliders</title>
+  <title>Neptune Lights | Misc</title>
   <link rel="stylesheet" href="https://cdn.lineicons.com/3.0/lineicons.css"> 
   <style>
     .sub_cat_wrapper{
