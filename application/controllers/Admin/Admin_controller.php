@@ -183,4 +183,19 @@ Class Admin_controller extends CI_Controller
             echo json_encode($response);
         } 
     }
+    public function delete_a_product()
+    {
+        if(isset($_SESSION['firstname']))
+        {
+            $this->Admin_model->delete_a_product_fromdb();
+        }
+        else
+        {
+            $response = array(
+                'status' => 'err',
+                'message' => 'Not authorized'
+            );
+            echo json_encode($response);
+        }
+    }
 }

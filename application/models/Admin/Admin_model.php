@@ -196,23 +196,36 @@ class Admin_model extends CI_Model
     public function delete_sub_cata($sub_cat_id)
     {
         // Check for exisiting product add that later
-
-        $this->db->where('id',$sub_cat_id);
-        if($this->db->delete('nep_sub_categories'))
+        $this->db->where('sub_cat',$sub_cat_id);
+        $query = $this->db->get('nep_products');
+        if($query->num_rows() > 0)
         {
             $response = array(
-                'status' => 'success'
+                'status' => 'err',
+                'message' => 'You cannot delete this cat as there are products in this category'
             );
             echo json_encode($response);
         }
         else
         {
-            $response = array(
-                'status' => 'err',
-                'message' => 'Cannot delete this cat'
-            );
-            echo json_encode($response);
+            $this->db->where('id',$sub_cat_id);
+            if($this->db->delete('nep_sub_categories'))
+            {
+                $response = array(
+                    'status' => 'success'
+                );
+                echo json_encode($response);
+            }
+            else
+            {
+                $response = array(
+                    'status' => 'err',
+                    'message' => 'Cannot delete this cat'
+                );
+                echo json_encode($response);
+            }
         }
+        
     }
     public function add_new_product_data()
     {
@@ -369,6 +382,25 @@ class Admin_model extends CI_Model
         else
         {
             return false;
+        }
+    }
+    public function delete_a_product_fromdb()
+    {
+        $this->db->where('id',$_POST['product_id']);
+        if($this->db->delete('nep_products'))
+        {
+            $response = array(
+                'status' => 'success'
+            );
+            echo json_encode($response);
+        }
+        else
+        {
+            $response = array(
+                'status' => 'err',
+                'message' => 'Cannot delete this cat'
+            );
+            echo json_encode($response);
         }
     }
 }

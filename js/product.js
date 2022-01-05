@@ -33,3 +33,26 @@ $(document).on('submit','#create_new_product_form',function(e){
         }
     });
 });
+$('#delete_product_btn').click(function(e){
+    e.preventDefault();
+    var product_id = $(this).attr('data-id');
+    $.ajax({
+        url : ""+url+"delete_a_product",
+        method : "post",
+        data : {
+            product_id : product_id
+        },
+        dataType : "json",
+        success:function(response)
+        {
+            if(response.status == "success")
+            {
+                location.reload();
+            }
+            else
+            {
+                alert(response.message);
+            }
+        }
+    });
+});

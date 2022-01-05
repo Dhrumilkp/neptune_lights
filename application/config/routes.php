@@ -63,5 +63,6 @@ $route['delete_sub_cat'] = 'Admin/Admin_controller/delete_sub_cat';
 $route['upload_new_product'] = 'Admin/Admin_controller/upload_new_product';
 $route['sliders'] = 'Admin/Admin_controller/sliders';
 $route['createnew_slider'] = 'Admin/Admin_controller/createnew_slider';
+$route['delete_a_product'] = 'Admin/Admin_controller/delete_a_product';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

@@ -116,6 +116,10 @@
                             <div class="card-body">
                               <h4 class="card-title"><?php echo $row['title']; ?></h4>
                               <p><?php echo $row['description']; ?></p>
+                              <div class="action-wrapper" style="display:flex;justify-content:space-between;width:100%;">
+                                <!-- <button class="btn btn-success" style="color:white;" data-id="<?php echo $row['id']; ?>" id="edit_product_button">Edit</button> -->
+                                <button class="btn btn-danger" style="color:white;" data-id="<?php echo $row['id']; ?>" id="delete_product_btn">Delete</button>
+                              </div>
                             </div>
                           </div>
                         </div>
