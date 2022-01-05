@@ -424,4 +424,58 @@ class Admin_model extends CI_Model
             echo json_encode($response);
         }
     }
+    public function update_contact_info_db()
+    {
+        $query = $this->db->get('nep_contact');
+        if($query->num_rows() > 0)
+        {
+            // Update
+            $data = array(
+                'nep_address' => $_POST['your_address'],
+                'contact_no' => $_POST['contact_number'],
+                'google_embed' => $_POST['google_map_code']
+            );
+            $this->db->update('nep_contact',$data);
+            if($this->db->affected_rows() > 0)
+            {
+                $response = array(
+                    'status' => 'success'
+                );
+                echo json_encode($response);
+            }
+            else
+            {
+                $response = array(
+                    'status' => 'err',
+                    'message' => 'Cannot delete this cat'
+                );
+                echo json_encode($response);
+            }
+        }
+        else
+        {
+            // Insert
+            $data = array(
+                'nep_address' => $_POST['your_address'],
+                'contact_no' => $_POST['contact_number'],
+                'google_embed' => $_POST['google_map_code']
+            );
+            $this->db->insert('nep_contact',$data);
+            if($this->db->affected_rows() > 0)
+            {
+                $response = array(
+                    'status' => 'success'
+                );
+                echo json_encode($response);
+            }
+            else
+            {
+                $response = array(
+                    'status' => 'err',
+                    'message' => 'Cannot delete this cat'
+                );
+                echo json_encode($response);
+            }
+        }
+    }
 }

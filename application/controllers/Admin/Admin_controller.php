@@ -228,4 +228,19 @@ Class Admin_controller extends CI_Controller
             echo json_encode($response);
         }
     }
+    public function update_contact_info()
+    {
+        if(isset($_SESSION['firstname']))
+        {
+           $this->Admin_model->update_contact_info_db();
+        }
+        else
+        {
+            $response = array(
+                'status' => 'err',
+                'message' => 'Not authorized'
+            );
+            echo json_encode($response);
+        }
+    }
 }

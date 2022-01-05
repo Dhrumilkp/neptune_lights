@@ -25,7 +25,29 @@
       <div class="main-panel">
         <div class="content-wrapper">
           <!-- Update contact information here -->
-          <p>This is contact us page you can update your contacts from here</p>
+          <div class="row">
+            <div class="col-md-12 col-lg-12">
+                <div class="card">
+                    <div class="card-body">
+                        <form class="forms-sample" id="update_Contact_Info" enctype="multipart/form-data">
+                            <div class="form-group">
+                                <label>Address</label>
+                                <textarea class="form-control" placeholder="enter your address details" name="your_address" id="your_address" rows="4" required></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label>Contact us</label>
+                                <input type="text" class="form-control" name="contact_number" placholder="enter your contact details seperated by comma" required/> 
+                            </div>
+                            <div class="form-group">
+                                <label>Google embed code</label>
+                                <textarea class="form-control" placeholder="copy and paste the iframe code here" name="google_map_code" id="google_map_code" rows="4" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary me-2" style="color:white;" id="update_contact_info">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+          </div>
         </div>
         <!-- content-wrapper ends -->
       </div>
@@ -37,6 +59,6 @@
   <?php 
     $this->load->view('Admin/Footer');
   ?>
-  <script src="<?php echo base_url(); ?>js/categories.js"></script>
+  <script src="<?php echo base_url(); ?>js/contact.js"></script>
 </body>
 </html>
