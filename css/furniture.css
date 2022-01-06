@@ -1,6 +1,6 @@
 :root {
     --themecolor: #000;
-    --themecolorlight: #fad80a8c
+    /* --themecolorlight: #fad80a8c */
 }
 
 body:not(.dark),

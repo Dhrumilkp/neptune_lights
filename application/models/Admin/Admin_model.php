@@ -478,4 +478,18 @@ class Admin_model extends CI_Model
             }
         }
     }
+    public function get_slider_data($limit)
+    {
+        $sql = "SELECT slider.caption,slider.img_path as slider_img,products.title,products.img_paths as product_imgs,products.id as product_id FROM nep_sliders as slider JOIN nep_products as products ON slider.product_id = products.id LIMIT 3";
+        $query = $this->db->query($sql);
+        if($query->num_rows() > 0)
+        {
+            $result = $query->result_array();
+            return $result;
+        }
+        else
+        {
+            return false;
+        }
+    }
 }

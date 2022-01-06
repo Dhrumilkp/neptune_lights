@@ -33,20 +33,6 @@
 
     <div class="body-overlay"></div>
     <div id="wrapper" class="clearfix">
-
-        <!-- <div id="top-bar" class="py-3 text-center bg-color-light">
-            <div class="container clearfix">
-                <div class="d-md-flex justify-content-md-between align-items-md-center">
-                    <h4 class="mb-2 mb-md-0 h6 fw-normal">Free Shipping on every order <span
-                            class="mx-2 text-black-50">&middot;</span> 30 Days Return</h4>
-                    <h4 class="mb-0 h6 fw-normal">Need Help? Call us at <a class="color" href="tel:+00-11-22-7541"><u
-                                class="fw-medium">+00-11-22-7541</u></a> or <a class="color"
-                            href="../../cdn-cgi/l/email-protection.html#a6c8c9d4c3d6cadfe6c5c7c8d0c7d588c5c9cb"><u
-                                class="fw-medium">email</u></a> us.</h4>
-                </div>
-            </div>
-        </div> -->
-
         <header id="header" class="header-size-md border-bottom-0">
             <div id="header-wrap">
                 <div class="container">
@@ -113,31 +99,35 @@
                         <nav class="primary-menu with-arrows order-lg-1 order-last px-0">
                             <ul class="menu-container">
                                 <li class="menu-item current">
-                                    <a class="menu-link" href="demo-furniture.html">
+                                    <a class="menu-link" href="<?php echo base_url(); ?>">
                                         <div>Home</div>
                                     </a>
-                                    <ul class="sub-menu-container">
-                                        <li class="menu-item">
-                                            <a class="menu-link" href="demo-furniture.html">
-                                                <div>Home Page 1</div>
-                                            </a>
-                                        </li>
-                                        <li class="menu-item">
-                                            <a class="menu-link" href="demo-furniture-2.html">
-                                                <div>Home Page 2</div>
-                                            </a>
-                                        </li>
-                                    </ul>
                                 </li>
                                 <li class="menu-item mega-menu mega-menu-full">
-                                    <a href="demo-furniture-products.html" class="menu-link">
-                                        <div>Shop</div>
+                                    <a href="#" class="menu-link">
+                                        <div>Categories</div>
                                     </a>
-
                                     <div class="mega-menu-content border-bottom-0">
                                         <div class="container">
                                             <div class="row">
-                                                <ul class="sub-menu-container mega-menu-column col-lg-auto">
+                                                <?php 
+                                                    if(!empty($categories))
+                                                    {
+                                                        foreach($categories as $row)
+                                                        {
+                                                            ?>
+                                                                <ul class="sub-menu-container mega-menu-column col-lg-auto">
+                                                                    <li class="menu-item">
+                                                                        <a class="menu-link" href="<?php echo base_url(); ?>category/<?php echo $row['id']; ?>">
+                                                                            <div><?php echo $row['name']; ?></div>
+                                                                        </a>
+                                                                    </li>
+                                                                </ul>
+                                                            <?
+                                                        }
+                                                    }
+                                                ?>
+                                                <!-- <ul class="sub-menu-container mega-menu-column col-lg-auto">
                                                     <li class="menu-item">
                                                         <a class="menu-link" href="demo-furniture-products.html">
                                                             <div>Sofa</div>
@@ -251,7 +241,7 @@
                                                             <div><i class="icon-line-link"></i>Single Page</div>
                                                         </a>
                                                     </li>
-                                                </ul>
+                                                </ul> -->
                                             </div>
                                         </div>
                                     </div>
@@ -275,129 +265,42 @@
         <section id="slider" class="slider-element swiper_wrapper min-vh-75" data-loop="true">
             <div class="swiper-container swiper-parent">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <div class="container">
-                            <div class="position-absolute pos-y-end mb-3 row w-100 col-mb-30">
-                                <div class="col-md-auto col-10 ts">
-                                    <a href="demo-furniture-single.html" class="card d-flex flex-row"
-                                        data-animate="fadeInLeft">
-                                        <img src="<?php echo base_url(); ?>images/slider_1.webp" width="100" height="100"
-                                            alt="Image" class="rounded-start">
-                                        <div class="card-body px-4">
-                                            <h4 class="mb-2 text-white fw-medium">Light Brown Dining Sofa</h4>
-                                            <h4 class="mb-0 h6 text-white fw-normal font-body d-flex">$149.99 <i
-                                                    class="icon-long-arrow-right ms-auto"></i></h4>
+                    <?php
+                        if(!empty($slider_data))
+                        {
+                            foreach($slider_data as $row)
+                            {
+                                
+                                $img = unserialize($row['product_imgs']);
+                                
+                                ?>
+                                    <div class="swiper-slide">
+                                        <div class="container">
+                                            <h1>
+                                                <?php echo $row['caption']; ?>
+                                            </h1>
+                                            <div class="position-absolute pos-y-end mb-3 row w-100 col-mb-30">
+                                                <div class="col-md-auto col-10 ts">
+                                                    <a href="<?php echo base_url(); ?>view-product/<?php echo $row['product_id']; ?>" class="card d-flex flex-row"
+                                                        data-animate="fadeInLeft">
+                                                        <img src="<?php echo base_url(); ?><?php echo $img[0]; ?>" width="100" height="100"
+                                                            alt="Image" class="rounded-start">
+                                                        <div class="card-body px-4">
+                                                            <h4 class="mb-2 text-white fw-medium"><?php echo $row['title']; ?></h4>
+                                                            <h4 class="mb-0 h6 text-white fw-normal font-body d-flex"><i class="icon-long-arrow-right ms-auto"></i></h4>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                            </div>
                                         </div>
-                                    </a>
-                                </div>
-                                <div class="col-md-auto col-10 ts">
-                                    <a href="demo-furniture-single.html" class="card d-flex flex-row"
-                                        data-animate="fadeInLeft" data-delay="200">
-                                        <img src="<?php echo base_url(); ?>images/hero-2/1/3.jpg" width="100" height="100"
-                                            alt="Image" class="rounded-start">
-                                        <div class="card-body px-4">
-                                            <h4 class="mb-2 text-white fw-medium">Sofa Side Table</h4>
-                                            <h4 class="mb-0 h6 text-white fw-normal font-body d-flex">$31.49 <i
-                                                    class="icon-long-arrow-right ms-auto"></i></h4>
+                                        <div class="swiper-slide-bg"
+                                            style="background:linear-gradient(0deg, rgb(20 19 20 / 50%), rgb(0 0 0 / 50%)), url('<?php echo base_url(); ?><?php echo $row['slider_img']; ?>');background-size:cover;background-position:center;">
                                         </div>
-                                    </a>
-                                </div>
-                                <div class="col-md-auto col-10 ts">
-                                    <a href="demo-furniture-single.html" class="card d-flex flex-row"
-                                        data-animate="fadeInLeft" data-delay="400">
-                                        <img src="<?php echo base_url(); ?>images/hero-2/1/2.jpg" width="100" height="100"
-                                            alt="Image" class="rounded-start">
-                                        <div class="card-body px-4">
-                                            <h4 class="mb-2 text-white fw-medium">Blue Pillow for Sofa</h4>
-                                            <h4 class="mb-0 h6 text-white fw-normal font-body d-flex">$11.49 <i
-                                                    class="icon-long-arrow-right ms-auto"></i></h4>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide-bg"
-                            style="background:url('<?php echo base_url(); ?>images/slider_1.jpg');background-size:cover;background-position:center;">
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="container">
-                            <div class="position-absolute pos-y-end mb-3 row justify-content-lg-end w-100 col-mb-30">
-                                <div class="col-lg-auto col-md-8 col-10">
-                                    <a href="demo-furniture-single.html" class="card d-flex flex-row"
-                                        data-animate="fadeInLeft">
-                                        <img src="<?php echo base_url(); ?>images/hero-2/2/1.jpg" width="100" height="100"
-                                            alt="Image" class="rounded-start">
-                                        <div class="card-body px-4">
-                                            <h4 class="mb-2 text-white fw-medium">Brown Sofa with Pillows</h4>
-                                            <h4 class="mb-0 h6 text-white fw-normal font-body d-flex">$149.99 <i
-                                                    class="icon-long-arrow-right ms-auto"></i></h4>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="col-lg-auto col-md-8 col-10">
-                                    <a href="demo-furniture-single.html" class="card d-flex flex-row"
-                                        data-animate="fadeInLeft" data-delay="400">
-                                        <img src="<?php echo base_url(); ?>images/hero-2/2/2.jpg" width="100" height="100"
-                                            alt="Image" class="rounded-start">
-                                        <div class="card-body px-4">
-                                            <h4 class="mb-2 text-white fw-medium">Table Flower Plot</h4>
-                                            <h4 class="mb-0 h6 text-white fw-normal font-body d-flex">$11.49 <i
-                                                    class="icon-long-arrow-right ms-auto"></i></h4>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide-bg"
-                            style="background:url('<?php echo base_url(); ?>images/slider_2.webp');background-position:center;background-size:cover;">
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="container">
-                            <div class="position-absolute pos-y-end mb-3 row justify-content-lg-center w-100 col-mb-30">
-                                <div class="col-md-auto col-10">
-                                    <a href="demo-furniture-single.html" class="card d-flex flex-row"
-                                        data-animate="fadeInLeft">
-                                        <img src="<?php echo base_url(); ?>images/hero-2/1/1.jpg" width="100" height="100"
-                                            alt="Image" class="rounded-start">
-                                        <div class="card-body px-4">
-                                            <h4 class="mb-2 text-white fw-medium">Light Brown Dining Sofa</h4>
-                                            <h4 class="mb-0 h6 text-white fw-normal font-body d-flex">$149.99 <i
-                                                    class="icon-long-arrow-right ms-auto"></i></h4>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="col-md-auto col-10">
-                                    <a href="demo-furniture-single.html" class="card d-flex flex-row"
-                                        data-animate="fadeInLeft" data-delay="200">
-                                        <img src="<?php echo base_url(); ?>images/hero-2/1/3.jpg" width="100" height="100"
-                                            alt="Image" class="rounded-start">
-                                        <div class="card-body px-4">
-                                            <h4 class="mb-2 text-white fw-medium">Sofa Side Table</h4>
-                                            <h4 class="mb-0 h6 text-white fw-normal font-body d-flex">$31.49 <i
-                                                    class="icon-long-arrow-right ms-auto"></i></h4>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="col-md-auto col-10">
-                                    <a href="demo-furniture-single.html" class="card d-flex flex-row"
-                                        data-animate="fadeInLeft" data-delay="400">
-                                        <img src="<?php echo base_url(); ?>images/hero-2/1/2.jpg" width="100" height="100"
-                                            alt="Image" class="rounded-start">
-                                        <div class="card-body px-4">
-                                            <h4 class="mb-2 text-white fw-medium">Blue Pillow for Sofa</h4>
-                                            <h4 class="mb-0 h6 text-white fw-normal font-body d-flex">$11.49 <i
-                                                    class="icon-long-arrow-right ms-auto"></i></h4>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide-bg"
-                            style="background:url('<?php echo base_url(); ?>images/slider_3.webp');background-position:center;background-size:cover;">
-                        </div>
-                    </div>
+                                    </div>
+                                <?
+                            }
+                        }
+                    ?>
                 </div>
                 <div class="slider-arrow-left">
                     <svg xmlns="https://www.w3.org/2000/svg" width="52" height="52" fill="#FFF" viewBox="0 0 256 256">
