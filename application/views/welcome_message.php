@@ -328,15 +328,15 @@
         </section>
 
         <section id="content">
-            <div class="content-wrap py-0">
+            <div class="content-wrap">
                 <!-- New section  start -->
-                <div class="container-fluid">
+                <div class="container">
                     <div class="row align-items-lg-center col-mb-30">
 
-                        <div class="col-xl-8 col-lg-6 px-lg-0 min-vh-50 min-vh-lg-75" style="background: url('http://localhost/neptune_lights/images/section.jpg') no-repeat center center; background-size: cover;">
+                        <div class="col-xl-6 col-lg-6 px-lg-0" style="background: url('http://localhost/neptune_lights/images/section.jpg') no-repeat center center; background-size: cover;height:500px;">
                         </div>
 
-                        <div class="col-xl-4 col-lg-6 px-lg-5 py-5">
+                        <div class="col-xl-6 col-lg-6 px-lg-5 py-5">
                             <h3 class="h1 mb-4 fw-normal">Get to know about us</h3>
                             <p>Compellingly cultivate synergistic infrastructures rather than fully tested
                                 opportunities. Synergistically evisculate web-enabled interfaces for market positioning
@@ -347,7 +347,7 @@
                     </div>
                 </div>
                 <!-- New section ends -->
-                <div class="section mt-0">
+                <div class="section mt-0" style="background:#fff;">
                     <div class="container text-center mw-md topmargin bottommargin">
                         <h2 class="display-4 fw-normal">Why <span data-animate="svg-underline-animated"
                                 class="svg-underline nocolor"><span>Choose</span></span> Us?</h2>
@@ -474,35 +474,36 @@
                     </div>
                 </div>
 
-                <div class="container-fluid">
+                <div class="container-fluid" style="background:#f9f9f9;">
+                    <div class="container">
+                        <div class="text-center mt-6 mb-5">
+                            <h2 class="h1 fw-normal mb-4">Shop by <span data-animate="svg-underline-animated"
+                                    class="svg-underline nocolor"><span>Category</span></span></h2>
+                            <!-- <a href="demo-furniture-products.html"
+                                class="button button-small button-border m-0 button-dark border-width-1 border-default px-4 h-bg-color"><i
+                                    class="icon-line-grid"></i> View All</a> -->
+                        </div>
 
-                    <div class="text-center mt-6 mb-5">
-                        <h2 class="h1 fw-normal mb-4">Shop by <span data-animate="svg-underline-animated"
-                                class="svg-underline nocolor"><span>Category</span></span></h2>
-                        <a href="demo-furniture-products.html"
-                            class="button button-small button-border m-0 button-dark border-width-1 border-default px-4 h-bg-color"><i
-                                class="icon-line-grid"></i> View All</a>
-                    </div>
-
-                    <div class="row item-categories gutter-20">
-                        <?php 
-                            if(!empty($categories))
-                            {
-                                foreach($categories as $row)
+                        <div class="row item-categories gutter-20">
+                            <?php 
+                                if(!empty($categories))
                                 {
-                                    ?>
-                                        <div class="col-lg-4 col-md-6">
-                                            <a href="<?php echo base_url(); ?>category/<?php echo $row['id']; ?>"
-                                                class="d-block h-op-09 op-ts"
-                                                style="background: url('<?php echo base_url(); ?><?php echo $row['img_path']; ?>') no-repeat center center; background-size: cover; height: 340px;">
-                                                <h5 class="text-uppercase ls1 bg-white mb-0"><?php echo $row['name']; ?></h5>
-                                            </a>
-                                        </div>
-                                    <?
+                                    foreach($categories as $row)
+                                    {
+                                        ?>
+                                            <div class="col-lg-4 col-md-6">
+                                                <a href="<?php echo base_url(); ?>category/<?php echo $row['id']; ?>"
+                                                    class="d-block h-op-09 op-ts"
+                                                    style="background: url('<?php echo base_url(); ?><?php echo $row['img_path']; ?>') no-repeat center center; background-size: cover; height: 340px;">
+                                                    <h5 class="text-uppercase ls1 bg-white mb-0"><?php echo $row['name']; ?></h5>
+                                                </a>
+                                            </div>
+                                        <?
+                                    }
                                 }
-                            }
-                        ?>
-                        
+                            ?>
+                            
+                        </div>
                     </div>
                 </div>
 
@@ -560,9 +561,7 @@
                                                         <div class="bg-overlay">
                                                             <div class="bg-overlay-content align-items-end justify-content-between"
                                                                 data-hover-animate="fadeIn" data-hover-speed="400">
-                                                                <a href="demo-furniture-2.html#" class="btn btn-light me-2"><i
-                                                                        class="icon-line-shopping-cart"></i></a>
-                                                                <a href="<?php echo base_url(); ?>ajax/quick-view.html" class="btn btn-light"
+                                                                <a href="<?php echo base_url(); ?>view-product/<?php echo $row['id']; ?>" class="btn btn-light"
                                                                     data-lightbox="ajax"><i class="icon-line-expand"></i></a>
                                                             </div>
                                                         </div>
