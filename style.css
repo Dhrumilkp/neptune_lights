@@ -3,7 +3,9 @@
         scroll-behavior: auto
     }
 }
-
+:root{
+    --brand-color: #fad80a8c;
+}
 @media(min-width:576px) {
     .card-columns {
         -webkit-column-count: 3;
@@ -7641,7 +7643,10 @@ p.wp-caption-text {
 
 .product .product-image {
     position: relative;
-    overflow: hidden
+    overflow: hidden;
+    height: 400px;
+    border-radius: 10px;
+    border: 1px solid var(--brand-color);
 }
 
 .product-image .slide a,

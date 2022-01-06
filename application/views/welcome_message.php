@@ -276,9 +276,11 @@
                                 ?>
                                     <div class="swiper-slide">
                                         <div class="container">
-                                            <h1>
-                                                <?php echo $row['caption']; ?>
-                                            </h1>
+                                            <div class="caption-wrapper" style="position:absolute;top:20%;width:50%;">
+                                                <h1 style="color:white;font-size:80px;">
+                                                    <?php echo $row['caption']; ?>
+                                                </h1>
+                                            </div>
                                             <div class="position-absolute pos-y-end mb-3 row w-100 col-mb-30">
                                                 <div class="col-md-auto col-10 ts">
                                                     <a href="<?php echo base_url(); ?>view-product/<?php echo $row['product_id']; ?>" class="card d-flex flex-row"
@@ -286,7 +288,7 @@
                                                         <img src="<?php echo base_url(); ?><?php echo $img[0]; ?>" width="100" height="100"
                                                             alt="Image" class="rounded-start">
                                                         <div class="card-body px-4">
-                                                            <h4 class="mb-2 text-white fw-medium"><?php echo $row['title']; ?></h4>
+                                                            <h4 class="mb-2 text-white fw-medium" style="font-size:25px;"><?php echo $row['title']; ?></h4>
                                                             <h4 class="mb-0 h6 text-white fw-normal font-body d-flex"><i class="icon-long-arrow-right ms-auto"></i></h4>
                                                         </div>
                                                     </a>
@@ -477,37 +479,34 @@
                     <div class="text-center mt-6 mb-5">
                         <h2 class="h1 fw-normal mb-4">Shop by <span data-animate="svg-underline-animated"
                                 class="svg-underline nocolor"><span>Category</span></span></h2>
-                        <!-- <a href="demo-furniture-products.html"
+                        <a href="demo-furniture-products.html"
                             class="button button-small button-border m-0 button-dark border-width-1 border-default px-4 h-bg-color"><i
-                                class="icon-line-grid"></i> View All</a> -->
+                                class="icon-line-grid"></i> View All</a>
                     </div>
 
                     <div class="row item-categories gutter-20">
-                        <div class="col-lg-4 col-md-6">
-                            <a href="https://themes.semicolonweb.com/html/canvas/demo-forum-products.html"
-                                class="d-block h-op-09 op-ts"
-                                style="background: url('<?php echo base_url(); ?>images/indoor_lights.webp') no-repeat center center; background-size: cover; height: 340px;">
-                                <h5 class="text-uppercase ls1 bg-white mb-0">Indoor</h5>
-                            </a>
-                        </div>
-                        <div class="col-lg-4 col-md-6">
-                            <a href="https://themes.semicolonweb.com/html/canvas/demo-forum-products.html"
-                                class="d-block h-op-09 op-ts"
-                                style="background: url('<?php echo base_url(); ?>images/outdoor_lights.webp') no-repeat center center; background-size: cover; height: 340px;">
-                                <h5 class="text-uppercase ls1 bg-white mb-0">Outdoor</h5>
-                            </a>
-                        </div>
-                        <div class="col-lg-4 col-md-6">
-                            <a href="https://themes.semicolonweb.com/html/canvas/demo-forum-products.html"
-                                class="d-block h-op-09 op-ts"
-                                style="background: url('<?php echo base_url(); ?>images/special_lights.webp') no-repeat center center; background-size: cover; height: 340px;">
-                                <h5 class="text-uppercase ls1 bg-white mb-0">Neptune Special</h5>
-                            </a>
-                        </div>
+                        <?php 
+                            if(!empty($categories))
+                            {
+                                foreach($categories as $row)
+                                {
+                                    ?>
+                                        <div class="col-lg-4 col-md-6">
+                                            <a href="<?php echo base_url(); ?>category/<?php echo $row['id']; ?>"
+                                                class="d-block h-op-09 op-ts"
+                                                style="background: url('<?php echo base_url(); ?><?php echo $row['img_path']; ?>') no-repeat center center; background-size: cover; height: 340px;">
+                                                <h5 class="text-uppercase ls1 bg-white mb-0"><?php echo $row['name']; ?></h5>
+                                            </a>
+                                        </div>
+                                    <?
+                                }
+                            }
+                        ?>
+                        
                     </div>
                 </div>
 
-                <div class="section custom-bg mt-3 mb-0" style="--custom-bg: #F3F3ED; padding: 100px 0;">
+                <div class="section custom-bg mt-3 mb-0" style="padding: 100px 0;">
                     <div class="container">
                         <div id="shop" class="shop row gutter-30 col-mb-30 mt-3">
                             <div class="col-xl-3 col-lg-6">
@@ -515,194 +514,79 @@
                                         class="svg-underline nocolor"><span>Arrivals</span></span></h3>
                                 <p class="op-07 mb-4">Compellingly cultivate synergistic infrastructures rather than
                                     fully tested opportunities. Synergistically evisculate web-enabled interfaces.</p>
-                                <a href="demo-furniture-products.html"
-                                    class="button button-border py-1 nott ls0 fw-normal button-dark border-width-1 border-color h-bg-color">New
-                                    Arrivals</a>
-                                <a href="demo-furniture-products.html"
-                                    class="button button-border py-1 nott ls0 fw-normal button-dark border-width-1 border-color h-bg-color">Popular</a>
+                                <a href="<?php echo base_url(); ?>all-product/filter?type=new_arrival"
+                                    class="button button-border py-1 nott ls0 fw-normal button-dark border-width-1 border-color h-bg-color">See All</a>
                             </div>
-
-                            <div class="product col-lg-3 col-md-4 col-sm-6 col-12">
-                                <div class="grid-inner">
-                                    <div class="product-image">
-                                        <a href="demo-forum-single.html"><img src="<?php echo base_url(); ?>images/shop/2.jpg"
-                                                alt="Light Grey Sofa"></a>
-                                        <a href="demo-forum-single.html"><img src="<?php echo base_url(); ?>images/shop/2-1.jpg"
-                                                alt="Light Grey Sofa"></a>
-                                        <div class="bg-overlay">
-                                            <div class="bg-overlay-content align-items-end justify-content-between"
-                                                data-hover-animate="fadeIn" data-hover-speed="400">
-                                                <a href="demo-furniture-2.html#" class="btn btn-light me-2"><i
-                                                        class="icon-line-shopping-cart"></i></a>
-                                                <a href="<?php echo base_url(); ?>ajax/quick-view.html" class="btn btn-light"
-                                                    data-lightbox="ajax"><i class="icon-line-expand"></i></a>
+                            <?php 
+                                $result = $this->Admin_model->get_new_arrivals(6);
+                                if(!empty($result))
+                                {
+                                    foreach($result as $row)
+                                    {
+                                        $img = unserialize($row['img_paths']);
+                                        ?>
+                                            <div class="product col-lg-4 col-md-4 col-sm-6 col-12">
+                                                <div class="grid-inner">
+                                                    <div class="product-image">
+                                                        <a href="<?php echo base_url(); ?>view-product/<?php echo $row['id']; ?>">
+                                                            <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+                                                                <div class="carousel-inner">
+                                                                    <?php 
+                                                                        if(!empty($img))
+                                                                        {
+                                                                            foreach($img as $key => $value)
+                                                                            {
+                                                                                if ($key === array_key_first($img)) {
+                                                                                    ?>
+                                                                                        <div class="carousel-item active">
+                                                                                            <img src="<?php echo $value; ?>" class="d-block w-100" alt="...">
+                                                                                        </div>
+                                                                                    <?
+                                                                                }
+                                                                                else
+                                                                                {
+                                                                                    ?>
+                                                                                        <div class="carousel-item">
+                                                                                            <img src="<?php echo $value; ?>" class="d-block w-100" alt="...">
+                                                                                        </div>
+                                                                                    <?
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    ?>
+                                                                </div>
+                                                            </div>
+                                                        </a>
+                                                        <div class="bg-overlay">
+                                                            <div class="bg-overlay-content align-items-end justify-content-between"
+                                                                data-hover-animate="fadeIn" data-hover-speed="400">
+                                                                <a href="demo-furniture-2.html#" class="btn btn-light me-2"><i
+                                                                        class="icon-line-shopping-cart"></i></a>
+                                                                <a href="<?php echo base_url(); ?>ajax/quick-view.html" class="btn btn-light"
+                                                                    data-lightbox="ajax"><i class="icon-line-expand"></i></a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="product-desc">
+                                                        <div class="product-title mb-0">
+                                                            <h4 class="mb-0">
+                                                                <a class="fw-medium" href="<?php echo base_url(); ?>view-product/<?php echo $row['id']; ?>">
+                                                                    <?php
+                                                                        echo $row['title'];
+                                                                    ?>
+                                                                </a>
+                                                            </h4>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
-                                        </div>
-                                    </div>
-                                    <div class="product-desc">
-                                        <div class="product-title mb-0">
-                                            <h4 class="mb-0"><a class="fw-medium" href="demo-forum-single.html">Light
-                                                    Grey Sofa</a></h4>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="product col-lg-3 col-md-4 col-sm-6 col-12">
-                                <div class="grid-inner">
-                                    <div class="product-image">
-                                        <a href="demo-forum-single.html"><img src="<?php echo base_url(); ?>images/shop/3.jpg"
-                                                alt="Celling Lights"></a>
-                                        <a href="demo-forum-single.html"><img src="<?php echo base_url(); ?>images/shop/3-1.jpg"
-                                                alt="Celling Lights"></a>
-                                        <div class="bg-overlay">
-                                            <div class="bg-overlay-content align-items-end justify-content-between"
-                                                data-hover-animate="fadeIn" data-hover-speed="400">
-                                                <a href="demo-furniture-2.html#" class="btn btn-light me-2"><i
-                                                        class="icon-line-shopping-cart"></i></a>
-                                                <a href="<?php echo base_url(); ?>ajax/quick-view.html" class="btn btn-light"
-                                                    data-lightbox="ajax"><i class="icon-line-expand"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="product-desc">
-                                        <div class="product-title mb-0">
-                                            <h4 class="mb-0"><a class="fw-medium" href="demo-forum-single.html">Celling
-                                                    Lights</a></h4>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="product col-lg-3 col-md-4 col-sm-6 col-12">
-                                <div class="grid-inner">
-                                    <div class="product-image">
-                                        <a href="demo-forum-single.html"><img src="<?php echo base_url(); ?>images/shop/4-1.jpg"
-                                                alt="High Stand Chair"></a>
-                                        <a href="demo-forum-single.html"><img src="<?php echo base_url(); ?>images/shop/4.jpg"
-                                                alt="High Stand Chair"></a>
-                                        <div class="bg-overlay">
-                                            <div class="bg-overlay-content align-items-end justify-content-between"
-                                                data-hover-animate="fadeIn" data-hover-speed="400">
-                                                <a href="demo-furniture-2.html#" class="btn btn-light me-2"><i
-                                                        class="icon-line-shopping-cart"></i></a>
-                                                <a href="<?php echo base_url(); ?>ajax/quick-view.html" class="btn btn-light"
-                                                    data-lightbox="ajax"><i class="icon-line-expand"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="product-desc">
-                                        <div class="product-title mb-0">
-                                            <h4 class="mb-0"><a class="fw-medium" href="demo-forum-single.html">High
-                                                    Stand Chair</a></h4>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="product col-lg-3 col-md-4 col-sm-6 col-12">
-                                <div class="grid-inner">
-                                    <div class="product-image">
-                                        <a href="demo-forum-single.html"><img src="<?php echo base_url(); ?>images/shop/5.jpg"
-                                                alt="Dining Sofa with Tea-table"></a>
-                                        <a href="demo-forum-single.html"><img src="<?php echo base_url(); ?>images/shop/5-1.jpg"
-                                                alt="Dining Sofa with Tea-table"></a>
-                                        <div class="bg-overlay">
-                                            <div class="bg-overlay-content align-items-end justify-content-between"
-                                                data-hover-animate="fadeIn" data-hover-speed="400">
-                                                <a href="demo-furniture-2.html#" class="btn btn-light me-2"><i
-                                                        class="icon-line-shopping-cart"></i></a>
-                                                <a href="<?php echo base_url(); ?>ajax/quick-view.html" class="btn btn-light"
-                                                    data-lightbox="ajax"><i class="icon-line-expand"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="product-desc">
-                                        <div class="product-title mb-0">
-                                            <h4 class="mb-0"><a class="fw-medium" href="demo-forum-single.html">Dining
-                                                    Sofa with Tea-table</a></h4>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="product col-lg-3 col-md-4 col-sm-6 col-12">
-                                <div class="grid-inner">
-                                    <div class="product-image">
-                                        <a href="demo-forum-single.html"><img src="<?php echo base_url(); ?>images/shop/6.jpg"
-                                                alt="Bathroom Cloths Shelves"></a>
-                                        <div class="bg-overlay">
-                                            <div class="bg-overlay-content align-items-end justify-content-between"
-                                                data-hover-animate="fadeIn" data-hover-speed="400">
-                                                <a href="demo-furniture-2.html#" class="btn btn-light me-2"><i
-                                                        class="icon-line-shopping-cart"></i></a>
-                                                <a href="<?php echo base_url(); ?>ajax/quick-view.html" class="btn btn-light"
-                                                    data-lightbox="ajax"><i class="icon-line-expand"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="product-desc">
-                                        <div class="product-title mb-0">
-                                            <h4 class="mb-0"><a class="fw-medium" href="demo-forum-single.html">Bathroom
-                                                    Cloths Shelves</a></h4>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="product col-lg-3 col-md-4 col-sm-6 col-12">
-                                <div class="grid-inner">
-                                    <div class="product-image">
-                                        <a href="demo-forum-single.html"><img src="<?php echo base_url(); ?>images/shop/7.jpg"
-                                                alt="Golden Lamp for Room"></a>
-                                        <div class="bg-overlay">
-                                            <div class="bg-overlay-content align-items-end justify-content-between"
-                                                data-hover-animate="fadeIn" data-hover-speed="400">
-                                                <a href="demo-furniture-2.html#" class="btn btn-light me-2"><i
-                                                        class="icon-line-shopping-cart"></i></a>
-                                                <a href="<?php echo base_url(); ?>ajax/quick-view.html" class="btn btn-light"
-                                                    data-lightbox="ajax"><i class="icon-line-expand"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="product-desc">
-                                        <div class="product-title mb-0">
-                                            <h4 class="mb-0"><a class="fw-medium" href="demo-forum-single.html">Golden
-                                                    Lamp for Room</a></h4>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="product col-lg-3 col-md-4 col-sm-6 col-12">
-                                <div class="grid-inner">
-                                    <div class="product-image">
-                                        <a href="demo-forum-single.html"><img src="<?php echo base_url(); ?>images/shop/8.jpg"
-                                                alt="White Cuddle Chair with Cusions"></a><a
-                                            href="demo-forum-single.html"><img src="<?php echo base_url(); ?>images/shop/8-1.jpg"
-                                                alt="White Cuddle Chair with Cusions"></a>
-                                        <div class="bg-overlay">
-                                            <div class="bg-overlay-content align-items-end justify-content-between"
-                                                data-hover-animate="fadeIn" data-hover-speed="400">
-                                                <a href="demo-furniture-2.html#" class="btn btn-light me-2"><i
-                                                        class="icon-line-shopping-cart"></i></a>
-                                                <a href="<?php echo base_url(); ?>ajax/quick-view.html" class="btn btn-light"
-                                                    data-lightbox="ajax"><i class="icon-line-expand"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="product-desc">
-                                        <div class="product-title mb-0">
-                                            <h4 class="mb-0"><a class="fw-medium" href="demo-forum-single.html">White
-                                                    Cuddle Chair with Cusions</a></h4>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                                        <?
+                                    }
+                                }
+                            ?>
                         </div>
                     </div>
                 </div>
-
                 <div class="container-fluid">
                     <div class="row align-items-lg-center col-mb-30">
 

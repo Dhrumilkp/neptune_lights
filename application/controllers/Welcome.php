@@ -40,4 +40,9 @@ class Welcome extends CI_Controller {
 	{
 		echo $id;
 	}	
+	// All product with filter
+	public function product_all($type)
+	{
+		echo $type;
+	}
 }

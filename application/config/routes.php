@@ -68,5 +68,7 @@ $route['delete_slider_from_page'] = 'Admin/Admin_controller/delete_slider_from_p
 $route['contactus'] = 'Admin/Admin_controller/contactus';
 $route['update_contact_info'] = 'Admin/Admin_controller/update_contact_info';
 $route['category/(:any)'] = 'welcome/category_fetching/$1';
+$route['view-product/(:any)'] = 'welcome/product_single_page/$1';
+$route['all-product/(:any)'] = 'welcome/product_all/$1';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
