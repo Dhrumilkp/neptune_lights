@@ -790,7 +790,7 @@
                         </div>
                     </div>
                 </div>
-                <section class="home-testimonial section">
+                <section class="home-testimonial section" style="margin:0px !important;padding-top:40px;padding-bottom:40px;">
                     <div class="container-fluid">
                         <div class="row d-flex justify-content-center testimonial-pos">
                             <div class="col-md-12 d-flex justify-content-center">
@@ -831,7 +831,76 @@
                                         </div>
                                     </div>
                                 </div>
+                                <div id="oc-clients" class="owl-carousel image-carousel carousel-widget owl-loaded owl-drag" data-margin="100" data-loop="true" data-nav="false" data-autoplay="5000" data-pagi="false" data-items-xs="2" data-items-sm="3" data-items-md="4" data-items-lg="5" data-items-xl="6" style="margin-top:40px;">
+                                    <div class="owl-stage-outer">
+                                        <div class="owl-stage" style="transform: translate3d(-1864px, 0px, 0px); transition: all 0.25s ease 0s; width: 4144px;">
+                                            <div class="owl-item cloned" style="width: 107.2px; margin-right: 100px;">
+                                                <div class="oc-item"><a href="demo-agency.html#"><img src="images/clients/6.png" alt="Clients"></a></div>
+                                            </div>
+                                            <div class="owl-item cloned" style="width: 107.2px; margin-right: 100px;">
+                                                <div class="oc-item"><a href="demo-agency.html#"><img src="images/clients/7.png" alt="Clients"></a></div>
+                                            </div>
+                                            <div class="owl-item cloned" style="width: 107.2px; margin-right: 100px;">
+                                                <div class="oc-item"><a href="demo-agency.html#"><img src="images/clients/8.png" alt="Clients"></a></div>
+                                            </div>
+                                            <div class="owl-item cloned" style="width: 107.2px; margin-right: 100px;">
+                                                <div class="oc-item"><a href="demo-agency.html#"><img src="images/clients/9.png" alt="Clients"></a></div>
+                                            </div>
+                                            <div class="owl-item cloned" style="width: 107.2px; margin-right: 100px;">
+                                                <div class="oc-item"><a href="demo-agency.html#"><img src="images/clients/10.png" alt="Clients"></a></div>
+                                            </div>
+                                            <div class="owl-item" style="width: 107.2px; margin-right: 100px;">
+                                                <div class="oc-item"><a href="demo-agency.html#"><img src="images/clients/1.png" alt="Clients"></a></div>
+                                            </div>
+                                            <div class="owl-item" style="width: 107.2px; margin-right: 100px;">
+                                                <div class="oc-item"><a href="demo-agency.html#"><img src="images/clients/2.png" alt="Clients"></a></div>
+                                            </div>
+                                            <div class="owl-item" style="width: 107.2px; margin-right: 100px;">
+                                                <div class="oc-item"><a href="demo-agency.html#"><img src="images/clients/3.png" alt="Clients"></a></div>
+                                            </div>
+                                            <div class="owl-item" style="width: 107.2px; margin-right: 100px;">
+                                                <div class="oc-item"><a href="demo-agency.html#"><img src="images/clients/4.png" alt="Clients"></a></div>
+                                            </div>
+                                            <div class="owl-item active" style="width: 107.2px; margin-right: 100px;">
+                                                <div class="oc-item"><a href="demo-agency.html#"><img src="images/clients/5.png" alt="Clients"></a></div>
+                                            </div>
+                                            <div class="owl-item active" style="width: 107.2px; margin-right: 100px;">
+                                                <div class="oc-item"><a href="demo-agency.html#"><img src="images/clients/6.png" alt="Clients"></a></div>
+                                            </div>
+                                            <div class="owl-item active" style="width: 107.2px; margin-right: 100px;">
+                                                <div class="oc-item"><a href="demo-agency.html#"><img src="images/clients/7.png" alt="Clients"></a></div>
+                                            </div>
+                                            <div class="owl-item active" style="width: 107.2px; margin-right: 100px;">
+                                                <div class="oc-item"><a href="demo-agency.html#"><img src="images/clients/8.png" alt="Clients"></a></div>
+                                            </div>
+                                            <div class="owl-item active" style="width: 107.2px; margin-right: 100px;">
+                                                <div class="oc-item"><a href="demo-agency.html#"><img src="images/clients/9.png" alt="Clients"></a></div>
+                                            </div>
+                                            <div class="owl-item" style="width: 107.2px; margin-right: 100px;">
+                                                <div class="oc-item"><a href="demo-agency.html#"><img src="images/clients/10.png" alt="Clients"></a></div>
+                                            </div>
+                                            <div class="owl-item cloned" style="width: 107.2px; margin-right: 100px;">
+                                                <div class="oc-item"><a href="demo-agency.html#"><img src="images/clients/1.png" alt="Clients"></a></div>
+                                            </div>
+                                            <div class="owl-item cloned" style="width: 107.2px; margin-right: 100px;">
+                                                <div class="oc-item"><a href="demo-agency.html#"><img src="images/clients/2.png" alt="Clients"></a></div>
+                                            </div>
+                                            <div class="owl-item cloned" style="width: 107.2px; margin-right: 100px;">
+                                                <div class="oc-item"><a href="demo-agency.html#"><img src="images/clients/3.png" alt="Clients"></a></div>
+                                            </div>
+                                            <div class="owl-item cloned" style="width: 107.2px; margin-right: 100px;">
+                                                <div class="oc-item"><a href="demo-agency.html#"><img src="images/clients/4.png" alt="Clients"></a></div>
+                                            </div>
+                                            <div class="owl-item cloned" style="width: 107.2px; margin-right: 100px;">
+                                                <div class="oc-item"><a href="demo-agency.html#"><img src="images/clients/5.png" alt="Clients"></a></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="owl-nav disabled"><button type="button" role="presentation" class="owl-prev"><i class="icon-angle-left"></i></button><button type="button" role="presentation" class="owl-next"><i class="icon-angle-right"></i></button></div>
+                                    <div class="owl-dots disabled"></div>
+                                </div>
                         </section>
+                    </div>
                 </section>
                 <div class="section custom-bg my-0 py-0" style="--custom-bg: var(--themecolor);">
                     <div class="row align-items-center no-gutters">
