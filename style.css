@@ -1452,9 +1452,8 @@ a.h-text-dark:hover {
 }
 
 [class*=col-]:not([class*=sticky-]):not([class*=position-]) {
-    position: relative
+    position: relative;
 }
-
 .col-1-5 {
     flex: 0 0 auto;
     width: 20%
