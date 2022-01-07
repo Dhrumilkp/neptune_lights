@@ -70,5 +70,6 @@ $route['update_contact_info'] = 'Admin/Admin_controller/update_contact_info';
 $route['category/(:any)'] = 'welcome/category_fetching/$1';
 $route['view-product/(:any)'] = 'welcome/product_single_page/$1';
 $route['all-product/(:any)'] = 'welcome/product_all/$1';
+$route['contact-us'] = 'welcome/contact_us';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

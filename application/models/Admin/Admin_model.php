@@ -507,4 +507,17 @@ class Admin_model extends CI_Model
             return false;
         }
     }
+    public function getcontactdata()
+    {
+        $query = $this->db->get('nep_contact');
+        if($query -> num_rows() > 0)
+        {
+            $result = $query->result_array();
+            return $result;
+        }
+        else
+        {
+            return false;
+        }
+    }
 }

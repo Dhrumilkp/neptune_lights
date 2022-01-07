@@ -28,7 +28,8 @@ class Welcome extends CI_Controller {
 	// Contact page
 	public function contact_us()
 	{
-
+		$data['contact_us_data'] = $this->Admin_model->getcontactdata();
+		$this->load->view('contact_us',$data);
 	}
 	// Download Template
 	public function download_bro()

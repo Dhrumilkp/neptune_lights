@@ -251,9 +251,11 @@
                                         <div>About Us</div>
                                     </a>
                                 </li>
-                                <li class="menu-item"><a class="menu-link" href="demo-furniture-contact.html">
+                                <li class="menu-item">
+                                    <a class="menu-link" href="<?php echo base_url(); ?>contact-us">
                                         <div>Contact</div>
-                                    </a></li>
+                                    </a>
+                                </li>
                             </ul>
                         </nav>
                     </div>
@@ -474,7 +476,7 @@
                     </div>
                 </div>
 
-                <div class="container-fluid" style="background:#f9f9f9;">
+                <div class="container-fluid" style="background:#f9f9f9;padding-top:10px;">
                     <div class="container">
                         <div class="text-center mt-6 mb-5">
                             <h2 class="h1 fw-normal mb-4">Shop by <span data-animate="svg-underline-animated"
