@@ -609,7 +609,88 @@
                         </div>
                     </div>
                 </div>
-
+                <div class="section mt-lg-0 mb-0 py-6" style="background:white;">
+                  <div class="container">
+                    <div class="statistic_wrapper">
+                        <!-- Statistic wrappers -->
+                        <div class="container-fluid">
+                            <h1 class="mb-5" style="color:black;">Something interesting about us</h1>
+                            <div class="header-body">
+                                <div class="row">
+                                    <div class="col-xl-3 col-lg-6">
+                                        <div class="card card-stats mb-4 mb-xl-0">
+                                            <div class="card-body">
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <h5 class="card-title text-uppercase text-muted mb-0">Traffic</h5>
+                                                        <span class="h2 font-weight-bold mb-0">350,897</span>
+                                                    </div>
+                                                    <div class="col-auto">
+                                                        <div class="icon icon-shape bg-danger text-white rounded-circle shadow">
+                                                            <i class="fas fa-chart-bar"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-3 col-lg-6">
+                                        <div class="card card-stats mb-4 mb-xl-0">
+                                            <div class="card-body">
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <h5 class="card-title text-uppercase text-muted mb-0">New users</h5>
+                                                        <span class="h2 font-weight-bold mb-0">2,356</span>
+                                                    </div>
+                                                    <div class="col-auto">
+                                                        <div class="icon icon-shape bg-warning text-white rounded-circle shadow">
+                                                            <i class="fas fa-chart-pie"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-3 col-lg-6">
+                                        <div class="card card-stats mb-4 mb-xl-0">
+                                            <div class="card-body">
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <h5 class="card-title text-uppercase text-muted mb-0">Sales</h5>
+                                                        <span class="h2 font-weight-bold mb-0">924</span>
+                                                    </div>
+                                                    <div class="col-auto">
+                                                        <div class="icon icon-shape bg-yellow text-white rounded-circle shadow">
+                                                            <i class="fas fa-users"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-3 col-lg-6">
+                                        <div class="card card-stats mb-4 mb-xl-0">
+                                            <div class="card-body">
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <h5 class="card-title text-uppercase text-muted mb-0">Performance</h5>
+                                                    <span class="h2 font-weight-bold mb-0">49,65%</span>
+                                                    </div>
+                                                    <div class="col-auto">
+                                                        <div class="icon icon-shape bg-info text-white rounded-circle shadow">
+                                                            <i class="fas fa-percent"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+                </div>
                 <div class="section custom-bg mt-lg-0 mb-0 py-6" style="--custom-bg: #fdf3e7;">
                     <div class="container py-lg-4">
                         <div class="row col-mb-50">
@@ -709,7 +790,49 @@
                         </div>
                     </div>
                 </div>
-
+                <section class="home-testimonial section">
+                    <div class="container-fluid">
+                        <div class="row d-flex justify-content-center testimonial-pos">
+                            <div class="col-md-12 d-flex justify-content-center">
+                                <h1 style="color:black;">Explore what our customers has to say</h1>
+                            </div>
+                        </div>
+                        <section class="home-testimonial-bottom">
+                            <div class="container testimonial-inner">
+                                <div class="row d-flex justify-content-center">
+                                    <div class="col-md-4 style-3">
+                                        <div class="tour-item" style="border:1px solid #fcea78;">
+                                            <div class="tour-desc bg-white">
+                                                <div class="tour-text color-grey-3 text-center">“At this School, our mission is to balance a rigorous comprehensive college preparatory curriculum with healthy social and emotional development.”</div>
+                                                <div class="d-flex justify-content-center pt-2 pb-2"><img class="tm-people" src="https://images.pexels.com/photos/6625914/pexels-photo-6625914.jpeg" alt=""></div>
+                                                <div class="link-name d-flex justify-content-center">Balbir Kaur</div>
+                                                <div class="link-position d-flex justify-content-center">Student</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 style-3">
+                                        <div class="tour-item " style="border:1px solid #fcea78;">
+                                            <div class="tour-desc bg-white">
+                                                <div class="tour-text color-grey-3 text-center">“At this School, our mission is to balance a rigorous comprehensive college preparatory curriculum with healthy social and emotional development.”</div>
+                                                <div class="d-flex justify-content-center pt-2 pb-2"><img class="tm-people" src="https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt=""></div>
+                                                <div class="link-name d-flex justify-content-center">Balbir Kaur</div>
+                                                <div class="link-position d-flex justify-content-center">Student</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 style-3">
+                                        <div class="tour-item " style="border:1px solid #fcea78;">
+                                            <div class="tour-desc bg-white">
+                                                <div class="tour-text color-grey-3 text-center">“At this School, our mission is to balance a rigorous comprehensive college preparatory curriculum with healthy social and emotional development.”</div>
+                                                <div class="d-flex justify-content-center pt-2 pb-2"><img class="tm-people" src="https://images.pexels.com/photos/4946604/pexels-photo-4946604.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt=""></div>
+                                                <div class="link-name d-flex justify-content-center">Balbir Kaur</div>
+                                                <div class="link-position d-flex justify-content-center">Student</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                        </section>
+                </section>
                 <div class="section custom-bg my-0 py-0" style="--custom-bg: var(--themecolor);">
                     <div class="row align-items-center no-gutters">
 

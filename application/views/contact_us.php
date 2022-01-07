@@ -366,7 +366,6 @@
                     <div class="container-fluid">
                         <div class="clear"></div>
                         <div class="row align-items-center custom-bg">
-
                             <div class="col-md-6 px-lg-0 min-vh-50 min-vh-lg-100 d-flex align-self-stretch">
                                 <?php 
                                     if(!empty($contact_us_data))
@@ -382,8 +381,7 @@
                                 <h2 class="h1 fw-normal mb-5" style="color:black;">Our <span data-animate="svg-underline-animated"
                                         class="svg-underline" style="color:black;"><span>Office</span></span></h2>
                                 <div class="row col-mb-50">
-                                    <a href="https://www.google.com/maps/place/San+Francisco" target="_blank"
-                                        class="col-sm-6">
+                                    <div class="col-sm-6">
                                         <h3 class="h5 mb-2 fw-medium" style="color:black;">Ahmedabad</h3>
                                         <p class="m-0" style="color:black;">
                                             <?php 
@@ -407,7 +405,14 @@
                                                 }  
                                             ?>
                                         </p>
-                                    </a>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="form_wrapper">
+                                    <div class="toggle_switcher">
+                                        <!-- Add toggle swithc -->
+                                        
+                                    </div>
                                 </div>
                             </div>
                         </div>
