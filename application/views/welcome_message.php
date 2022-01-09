@@ -623,7 +623,7 @@
                                                 <div class="row">
                                                     <div class="col">
                                                         <h5 class="card-title text-uppercase text-muted mb-0">Traffic</h5>
-                                                        <div class="h2 font-weight-bold mb-0 counting" data-count="350,897">350,897</div>
+                                                        <div class="h2 font-weight-bold mb-0 counting" data-count="350897">350897</div>
                                                     </div>
                                                     <div class="col-auto">
                                                         <div class="icon icon-shape bg-danger text-white rounded-circle shadow">
@@ -640,7 +640,7 @@
                                                 <div class="row">
                                                     <div class="col">
                                                         <h5 class="card-title text-uppercase text-muted mb-0">New users</h5>
-                                                        <div class="h2 font-weight-bold mb-0 counting" data-count="2,356">2,356</div>
+                                                        <div class="h2 font-weight-bold mb-0 counting" data-count="2356">2356</div>
                                                     </div>
                                                     <div class="col-auto">
                                                         <div class="icon icon-shape bg-warning text-white rounded-circle shadow">
@@ -674,7 +674,7 @@
                                                 <div class="row">
                                                     <div class="col">
                                                         <h5 class="card-title text-uppercase text-muted mb-0">Performance</h5>
-                                                        <div class="h2 font-weight-bold mb-0 counting" data-count="49,659">49,659</div>
+                                                        <div class="h2 font-weight-bold mb-0 counting" data-count="49659">49659</div>
                                                     </div>
                                                     <div class="col-auto">
                                                         <div class="icon icon-shape bg-info text-white rounded-circle shadow">
@@ -998,12 +998,32 @@
     </div>
 
     <script src="<?php echo base_url(); ?>js/jquery.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.0-rc.3/jquery-ui.min.js" integrity="sha256-R6eRO29lbCyPGfninb/kjIXeRjMOqY3VWPVk6gMhREk=" crossorigin="anonymous"></script>
     <script src="<?php echo base_url(); ?>js/plugins.min.js"></script>
 
     <script src="<?php echo base_url(); ?>js/functions.js"></script>
     <script>
         $('.counting').each(function() {
-            //    Count the statistics
+            var $this = $(this),
+                countTo = $this.attr('data-count');
+        
+        $({ countNum: $this.text()}).animate({
+            countNum: countTo
+        },
+
+            {
+
+                duration: 3000,
+                easing:'linear',
+                step: function() {
+                    $this.text(Math.floor(this.countNum));
+                },
+                complete: function() {
+                    $this.text(this.countNum);
+                    //alert('finished');
+                }
+
+        });  
         });
     </script>
 </body>
