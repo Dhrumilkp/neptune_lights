@@ -333,7 +333,7 @@
             <div class="content-wrap">
                 <!-- New section  start -->
                 <div class="container">
-                    <div class="row align-items-lg-center col-mb-30">
+                    <div class="row align-items-lg-center col-mb-30" style="padding-bottom:100px;">
 
                         <div class="col-xl-6 col-lg-6 px-lg-0" style="background: url('http://localhost/neptune_lights/images/section.jpg') no-repeat center center; background-size: cover;height:500px;">
                         </div>
@@ -349,13 +349,13 @@
                     </div>
                 </div>
                 <!-- New section ends -->
-                <div class="section mt-0" style="background:#fff;">
+                <div class="section mt-0" style="background:#fdf3e7;">
                     <div class="container text-center mw-md topmargin bottommargin">
                         <h2 class="display-4 fw-normal">Why <span data-animate="svg-underline-animated"
                                 class="svg-underline nocolor"><span>Choose</span></span> Us?</h2>
                         <div class="clear"></div>
 
-                        <div class="row col-mb-50 mb-0 mt-5 justify-content-center">
+                        <div class="row col-mb-50 mb-0 mt-5 justify-content-center" style="padding-top:20px;padding-bottom:20px;">
                             <div class="col-sm-6 col-lg-4">
                                 <div class="feature-box fbox-center fbox-dark fbox-plain">
                                     <div class="fbox-icon">
@@ -493,7 +493,7 @@
                                     foreach($categories as $row)
                                     {
                                         ?>
-                                            <div class="col-lg-4 col-md-6">
+                                            <div class="col-lg-6 col-md-6">
                                                 <a href="<?php echo base_url(); ?>category/<?php echo $row['id']; ?>"
                                                     class="d-block h-op-09 op-ts"
                                                     style="background: url('<?php echo base_url(); ?><?php echo $row['img_path']; ?>') no-repeat center center; background-size: cover; height: 340px;">
@@ -512,7 +512,7 @@
                 <div class="section custom-bg mt-3 mb-0" style="padding: 100px 0;">
                     <div class="container">
                         <div id="shop" class="shop row gutter-30 col-mb-30 mt-3">
-                            <div class="col-xl-3 col-lg-6">
+                            <div class="col-xl-4 col-lg-4">
                                 <h3 class="mb-4 fw-normal h1">New <span data-animate="svg-underline-animated"
                                         class="svg-underline nocolor"><span>Arrivals</span></span></h3>
                                 <p class="op-07 mb-4">Compellingly cultivate synergistic infrastructures rather than
@@ -588,7 +588,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="container-fluid">
+                <!-- <div class="container-fluid">
                     <div class="row align-items-lg-center col-mb-30">
 
                         <div class="col-xl-8 col-lg-6 px-lg-0 min-vh-50 min-vh-lg-75"
@@ -608,7 +608,7 @@
                                 Now <i class="icon-long-arrow-right"></i></a>
                         </div>
                     </div>
-                </div>
+                </div> -->
                 <div class="section mt-lg-0 mb-0 py-6" style="background:white;">
                   <div class="container">
                     <div class="statistic_wrapper">
@@ -690,105 +690,6 @@
                         </div>
                     </div>
                   </div>
-                </div>
-                <div class="section custom-bg mt-lg-0 mb-0 py-6" style="--custom-bg: #fdf3e7;">
-                    <div class="container py-lg-4">
-                        <div class="row col-mb-50">
-
-                            <div class="col-md-4">
-                                <div class="feature-box fbox-center fbox-dark fbox-plain">
-                                    <div class="fbox-icon">
-                                        <svg xmlns="https://www.w3.org/2000/svg" width="64" height="64"
-                                            fill="var(--themecolor)" viewBox="0 0 256 256">
-                                            <rect width="256" height="256" fill="none"></rect>
-                                            <path
-                                                d="M54.46089,201.53911c-9.204-9.204-3.09935-28.52745-7.78412-39.85C41.82037,149.95168,24,140.50492,24,127.99963,24,115.4945,41.82047,106.048,46.67683,94.31079c4.68477-11.32253-1.41993-30.6459,7.78406-39.8499s28.52746-3.09935,39.85-7.78412C106.04832,41.82037,115.49508,24,128.00037,24c12.50513,0,21.95163,17.82047,33.68884,22.67683,11.32253,4.68477,30.6459-1.41993,39.8499,7.78406s3.09935,28.52746,7.78412,39.85C214.17963,106.04832,232,115.49508,232,128.00037c0,12.50513-17.82047,21.95163-22.67683,33.68884-4.68477,11.32253,1.41993,30.6459-7.78406,39.8499s-28.52745,3.09935-39.85,7.78412C149.95168,214.17963,140.50492,232,127.99963,232c-12.50513,0-21.95163-17.82047-33.68884-22.67683C82.98826,204.6384,63.66489,210.7431,54.46089,201.53911Z"
-                                                opacity="0.2"></path>
-                                            <path
-                                                d="M54.46089,201.53911c-9.204-9.204-3.09935-28.52745-7.78412-39.85C41.82037,149.95168,24,140.50492,24,127.99963,24,115.4945,41.82047,106.048,46.67683,94.31079c4.68477-11.32253-1.41993-30.6459,7.78406-39.8499s28.52746-3.09935,39.85-7.78412C106.04832,41.82037,115.49508,24,128.00037,24c12.50513,0,21.95163,17.82047,33.68884,22.67683,11.32253,4.68477,30.6459-1.41993,39.8499,7.78406s3.09935,28.52746,7.78412,39.85C214.17963,106.04832,232,115.49508,232,128.00037c0,12.50513-17.82047,21.95163-22.67683,33.68884-4.68477,11.32253,1.41993,30.6459-7.78406,39.8499s-28.52745,3.09935-39.85,7.78412C149.95168,214.17963,140.50492,232,127.99963,232c-12.50513,0-21.95163-17.82047-33.68884-22.67683C82.98826,204.6384,63.66489,210.7431,54.46089,201.53911Z"
-                                                fill="none" stroke="var(--themecolor)" stroke-linecap="round"
-                                                stroke-linejoin="round" stroke-width="8"></path>
-                                            <polyline points="172 104 113.333 160 84 132" fill="none"
-                                                stroke="var(--themecolor)" stroke-linecap="round"
-                                                stroke-linejoin="round" stroke-width="8"></polyline>
-                                        </svg>
-                                    </div>
-                                    <div class="fbox-content">
-                                        <h2 class="nott fw-medium h4 mb-4">Original & Excellent Quality</h2>
-                                        <p class="op-06">Completely formulate top-line resources rather than cross-media
-                                            portals cross-platform solutions.</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-md-4">
-                                <div class="feature-box fbox-center fbox-dark fbox-plain">
-                                    <div class="fbox-icon">
-                                        <svg xmlns="https://www.w3.org/2000/svg" width="64" height="64"
-                                            fill="var(--themecolor)" viewBox="0 0 256 256">
-                                            <rect width="256" height="256" fill="none"></rect>
-                                            <path
-                                                d="M176,144H16v40a8,8,0,0,0,8,8H44a24,24,0,0,1,48,0h72a23.99048,23.99048,0,0,1,11.99813-20.78815Z"
-                                                opacity="0.2"></path>
-                                            <path
-                                                d="M212,192a24.00631,24.00631,0,0,0-36.00187-20.78815L176,120h64v64a8,8,0,0,1-8,8H212"
-                                                opacity="0.2"></path>
-                                            <path d="M240,120H176V80h42.58374a8,8,0,0,1,7.42781,5.02887Z" fill="none"
-                                                stroke="var(--themecolor)" stroke-linecap="round"
-                                                stroke-linejoin="round" stroke-width="8"></path>
-                                            <line x1="16" y1="144" x2="176" y2="144" fill="none"
-                                                stroke="var(--themecolor)" stroke-linecap="round"
-                                                stroke-linejoin="round" stroke-width="8"></line>
-                                            <circle cx="188" cy="192" r="24" fill="none" stroke="var(--themecolor)"
-                                                stroke-miterlimit="10" stroke-width="8"></circle>
-                                            <circle cx="68" cy="192" r="24" fill="none" stroke="var(--themecolor)"
-                                                stroke-miterlimit="10" stroke-width="8"></circle>
-                                            <line x1="164" y1="192" x2="92" y2="192" fill="none"
-                                                stroke="var(--themecolor)" stroke-linecap="round"
-                                                stroke-linejoin="round" stroke-width="8"></line>
-                                            <path d="M44,192H24a8,8,0,0,1-8-8V72a8,8,0,0,1,8-8H176V171.21508"
-                                                fill="none" stroke="var(--themecolor)" stroke-linecap="round"
-                                                stroke-linejoin="round" stroke-width="8"></path>
-                                            <path d="M176,171.21508V120h64v64a8,8,0,0,1-8,8H212" fill="none"
-                                                stroke="var(--themecolor)" stroke-linecap="round"
-                                                stroke-linejoin="round" stroke-width="8"></path>
-                                        </svg>
-                                    </div>
-                                    <div class="fbox-content">
-                                        <h2 class="nott fw-medium h4 mb-4">Free & Fast Shipping</h2>
-                                        <p class="op-06">Rapidiously optimize user-centric catalysts for change
-                                            vis-a-vis granular "outside the box" thinking.</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-md-4">
-                                <div class="feature-box fbox-center fbox-dark fbox-plain">
-                                    <div class="fbox-icon">
-                                        <svg xmlns="https://www.w3.org/2000/svg" width="64" height="64"
-                                            fill="var(--themecolor)" viewBox="0 0 256 256">
-                                            <rect width="256" height="256" fill="none"></rect>
-                                            <path
-                                                d="M40,106.66667V48a8,8,0,0,1,8-8H208a8,8,0,0,1,8,8v58.66667c0,84.01533-71.306,111.85016-85.5438,116.57058a7.54755,7.54755,0,0,1-4.9124,0C111.306,218.51683,40,190.682,40,106.66667Z"
-                                                opacity="0.2"></path>
-                                            <path
-                                                d="M40,106.66667V48a8,8,0,0,1,8-8H208a8,8,0,0,1,8,8v58.66667c0,84.01533-71.306,111.85016-85.5438,116.57058a7.54755,7.54755,0,0,1-4.9124,0C111.306,218.51683,40,190.682,40,106.66667Z"
-                                                fill="none" stroke="var(--themecolor)" stroke-linecap="round"
-                                                stroke-linejoin="round" stroke-width="8"></path>
-                                            <polyline points="172 96 113.333 152 84 124" fill="none"
-                                                stroke="var(--themecolor)" stroke-linecap="round"
-                                                stroke-linejoin="round" stroke-width="8"></polyline>
-                                        </svg>
-                                    </div>
-                                    <div class="fbox-content">
-                                        <h2 class="nott fw-medium h4 mb-4">Secure Payment</h2>
-                                        <p class="op-06">Continually recaptiualize 2.0 action items after global
-                                            information. Efficiently strategize holistic networks.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
                 <section class="home-testimonial section" style="margin:0px !important;padding-top:40px;padding-bottom:40px;">
                     <div class="container-fluid">
