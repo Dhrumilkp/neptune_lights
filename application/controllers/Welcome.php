@@ -18,7 +18,8 @@ class Welcome extends CI_Controller {
 	// Product page single
 	public function product_single_page($product_id)
 	{
-
+		$data['product_data'] = $this->Admin_model->fetch_product_data($product_id);
+		$this->load->view('productSingal_view',$data);
 	}
 	// Adbout Us
 	public function about_us()

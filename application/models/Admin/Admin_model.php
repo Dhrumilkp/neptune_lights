@@ -520,4 +520,18 @@ class Admin_model extends CI_Model
             return false;
         }
     }
+    public function fetch_product_data($product_id)
+    {
+        $sql = "SELECT * FROM nep_products WHERE id = '".$product_id."'";
+        $query = $this->db->query($sql);
+        if($query->num_rows() > 0)
+        {
+            $result = $query->result_array();
+            return $result;
+        }
+        else
+        {
+            return false;
+        }
+    }
 }
