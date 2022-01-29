@@ -10,6 +10,10 @@ class Welcome extends CI_Controller {
     }
 	public function index()
 	{
+		$this->load->view('comingsoon');
+	}
+	public function landing()
+	{
 		$data['categories'] = $this->Admin_model->get_all_cat();
 		$data['subcategories'] = $this->Admin_model->get_all_subcat();
 		$data['slider_data'] = $this->Admin_model->get_slider_data(3);
