@@ -1,1 +1,1 @@
-const url = 'http://localhost/neptune_lights/';
+const url = 'https://neptunelightsindia.com/';
