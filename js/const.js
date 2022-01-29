@@ -1,1 +1,1 @@
-const url = 'https://neptunelightsindia.com/';
+const url = 'http://neptunelightsindia.com/';
